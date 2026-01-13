@@ -498,7 +498,7 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
         if not result.questions:
             return (0, 0, None)
 
-        # Generate exam ID
+        # Generate exam ID parts
         course_code = COURSE_CODES.get(course, course[:3])
         date_match = re.search(r'(\d{2})\.(\d{2})\.(\d{4})', result.metadata.date)
         if date_match:
@@ -508,8 +508,12 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
         file_hash = hashlib.md5(pdf_path.name.encode()).hexdigest()[:4]
         exam_id = f"{course_code}_{yymm}_{file_hash}"
 
+        # Create hierarchical output directory: course/yymm-hash/
+        exam_dir = output_dir / course_code / f"{yymm}-{file_hash}"
+        exam_dir.mkdir(parents=True, exist_ok=True)
+
         # Extract images and associate with questions
-        images_dir = output_dir / "images"
+        images_dir = exam_dir / "images"
         images_dir.mkdir(exist_ok=True)
 
         extractor = ImageExtractor(pdf_path)
@@ -570,8 +574,9 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
                 continue
 
             qtype = TYPE_CODES.get(q.question_type, 'unk')
-            yaml_filename = f"{exam_id}_q{q.number:02d}_{qtype}.yaml"
-            yaml_path = output_dir / yaml_filename
+            # Simplified filename: q01_mc1.yaml (exam_id is in directory path)
+            yaml_filename = f"q{q.number:02d}_{qtype}.yaml"
+            yaml_path = exam_dir / yaml_filename
 
             data = {
                 'exam': {
@@ -608,7 +613,8 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
 
             for i, img in enumerate(q_images):
                 suffix = f"_{i}" if len(q_images) > 1 else ""
-                img_filename = f"{exam_id}_q{q.number:02d}_img{suffix}.{img.image_type}"
+                # Simplified filename: q01_img.png (exam_id is in directory path)
+                img_filename = f"q{q.number:02d}_img{suffix}.{img.image_type}"
                 img_path = images_dir / img_filename
                 img.save(img_path)
                 image_refs.append({
@@ -618,7 +624,7 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
                 })
 
             if q_paper:
-                paper_filename = f"{exam_id}_q{q.number:02d}_paper.{q_paper.image_type}"
+                paper_filename = f"q{q.number:02d}_paper.{q_paper.image_type}"
                 paper_path = images_dir / paper_filename
                 q_paper.save(paper_path)
                 image_refs.append({

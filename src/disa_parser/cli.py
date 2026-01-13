@@ -473,6 +473,10 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
     """Worker: Parse exam and export to YAML. Returns (questions, exported, error)."""
     import hashlib
 
+    import fitz
+
+    from .images import ImageExtractor
+
     pdf_path_str, output_dir_str = args
     pdf_path = Path(pdf_path_str)
     output_dir = Path(output_dir_str)
@@ -503,6 +507,62 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
             yymm = "0000"
         file_hash = hashlib.md5(pdf_path.name.encode()).hexdigest()[:4]
         exam_id = f"{course_code}_{yymm}_{file_hash}"
+
+        # Extract images and associate with questions
+        images_dir = output_dir / "images"
+        images_dir.mkdir(exist_ok=True)
+
+        extractor = ImageExtractor(pdf_path)
+        all_images = extractor.extract_all_images()
+        papers = extractor.extract_annotatable_papers()
+
+        # Build question ranges for image association
+        doc = fitz.open(pdf_path)
+        question_images: dict[int, list] = defaultdict(list)
+        question_papers: dict[int, Any] = {}
+
+        # Map pages to questions with y-ranges
+        q_ranges = []
+        for i, q in enumerate(result.questions):
+            y_start = q.y_position
+            if i + 1 < len(result.questions):
+                next_q = result.questions[i + 1]
+                if next_q.page_num == q.page_num:
+                    y_end = next_q.y_position
+                else:
+                    y_end = doc[q.page_num].rect.height
+            else:
+                y_end = doc[q.page_num].rect.height if q.page_num < len(doc) else 1000
+            q_ranges.append((q.page_num, y_start, y_end, q.number))
+
+        # Associate images with questions based on position
+        for img in all_images:
+            img_y = img.bbox[1]
+            img_page = img.page_num
+
+            # Skip tiny images (icons, bullets)
+            if img.is_tiny():
+                continue
+
+            # Check if full-page (annotatable paper)
+            if img_page < len(doc):
+                page_rect = doc[img_page].rect
+                if img.is_full_page(page_rect.width, page_rect.height):
+                    # Find which question owns this page
+                    for page, y_start, y_end, q_num in q_ranges:
+                        if page == img_page:
+                            question_papers[q_num] = img
+                            break
+                    continue
+
+            # Find which question this image belongs to
+            for page, y_start, y_end, q_num in q_ranges:
+                if page == img_page and y_start - 30 <= img_y < y_end:
+                    question_images[q_num].append(img)
+                    break
+
+        doc.close()
+        extractor.close()
 
         exported = 0
         for q in result.questions:
@@ -540,6 +600,36 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
                     data['q']['correct'] = correct_indices
             if q.answer:
                 data['q']['answer'] = q.answer
+
+            # Save images and add references
+            q_images = question_images.get(q.number, [])
+            q_paper = question_papers.get(q.number)
+            image_refs = []
+
+            for i, img in enumerate(q_images):
+                suffix = f"_{i}" if len(q_images) > 1 else ""
+                img_filename = f"{exam_id}_q{q.number:02d}_img{suffix}.{img.image_type}"
+                img_path = images_dir / img_filename
+                img.save(img_path)
+                image_refs.append({
+                    'file': f"images/{img_filename}",
+                    'width': img.width,
+                    'height': img.height,
+                })
+
+            if q_paper:
+                paper_filename = f"{exam_id}_q{q.number:02d}_paper.{q_paper.image_type}"
+                paper_path = images_dir / paper_filename
+                q_paper.save(paper_path)
+                image_refs.append({
+                    'file': f"images/{paper_filename}",
+                    'width': q_paper.width,
+                    'height': q_paper.height,
+                    'is_paper': True,
+                })
+
+            if image_refs:
+                data['q']['images'] = image_refs
 
             with open(yaml_path, 'w', encoding='utf-8') as f:
                 yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)

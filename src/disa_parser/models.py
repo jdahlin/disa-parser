@@ -47,6 +47,23 @@ class ImageRef:
 
 
 @dataclass
+class HotspotRegion:
+    """A clickable region for hotspot questions."""
+
+    x: int
+    y: int
+    width: int
+    height: int
+
+    def to_dict(self) -> dict:
+        return {"x": self.x, "y": self.y, "w": self.width, "h": self.height}
+
+    def contains(self, px: int, py: int) -> bool:
+        """Check if a point is within this region."""
+        return self.x <= px <= self.x + self.width and self.y <= py <= self.y + self.height
+
+
+@dataclass
 class Question:
     """A parsed exam question."""
 
@@ -63,6 +80,8 @@ class Question:
     y_position: float = 0.0
     # Extracted images
     images: list[ImageRef] = field(default_factory=list)
+    # Hotspot answer regions (blue highlighted areas)
+    hotspot_regions: list[HotspotRegion] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         """Convert question to dictionary format."""
@@ -83,6 +102,8 @@ class Question:
             d["answer"] = self.answer
         if self.images:
             d["images"] = [img.to_dict() for img in self.images]
+        if self.hotspot_regions:
+            d["hotspot_regions"] = [r.to_dict() for r in self.hotspot_regions]
         return d
 
     def has_answer(self) -> bool:

@@ -42,6 +42,7 @@ from .images import (
 )
 from .models import (
     ExamMetadata,
+    HotspotRegion,
     ImageRef,
     Option,
     ParsedExam,
@@ -77,6 +78,7 @@ __all__ = [
     "Question",
     "Option",
     "ImageRef",
+    "HotspotRegion",
     "ParsedExam",
     "ExamMetadata",
     "QuestionType",

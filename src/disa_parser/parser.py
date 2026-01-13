@@ -16,7 +16,7 @@ from .constants import (
     POINTS_PATTERN,
     QUESTION_TYPES,
 )
-from .models import ExamMetadata, Option, ParsedExam, Question, QuestionType
+from .models import ExamMetadata, HotspotRegion, Option, ParsedExam, Question, QuestionType
 
 if TYPE_CHECKING:
     from .fixture import MockDocument
@@ -620,10 +620,15 @@ class DISAParser:
         question_text = full_text
         answer_text = ""
 
-        # Blue regions indicate hotspot answer coordinates
+        # Blue regions indicate hotspot answer regions
         if blue_regions and question.question_type == "Hotspot":
             coords = [f"({x},{y})" for x, y, w, h in blue_regions]
             answer_text = ", ".join(coords)
+            # Store full region bounds for validation
+            question.hotspot_regions = [
+                HotspotRegion(x=x, y=y, width=w, height=h)
+                for x, y, w, h in blue_regions
+            ]
 
         # Georgia font text is answer text for txt/essay questions
         if not answer_text and answer_parts:

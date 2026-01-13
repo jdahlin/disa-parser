@@ -631,6 +631,13 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
             if image_refs:
                 data['q']['images'] = image_refs
 
+            # Add hotspot regions for validation
+            if q.hotspot_regions:
+                data['q']['hotspot_regions'] = [
+                    {'x': r.x, 'y': r.y, 'w': r.width, 'h': r.height}
+                    for r in q.hotspot_regions
+                ]
+
             with open(yaml_path, 'w', encoding='utf-8') as f:
                 yaml.dump(data, f, allow_unicode=True, default_flow_style=False, sort_keys=False)
 

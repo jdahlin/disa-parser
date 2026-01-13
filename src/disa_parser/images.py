@@ -98,19 +98,25 @@ class ImageExtractor:
         self.doc.close()
 
     def extract_all_images(self) -> list[ExtractedImage]:
-        """Extract all meaningful images from the PDF."""
+        """Extract all meaningful images from the PDF.
+
+        Note: Same image appearing on different pages is kept (not deduplicated)
+        since each occurrence may belong to a different question.
+        """
         images = []
-        seen_hashes: set[str] = set()
+        # Track (hash, page) pairs to dedupe only within same page
+        seen: set[tuple[str, int]] = set()
 
         for page_num in range(len(self.doc)):
             page = self.doc[page_num]
             page_images = self._extract_page_images(page, page_num)
 
             for img in page_images:
-                # Skip duplicates (same image repeated)
-                if img.hash in seen_hashes:
+                # Skip duplicates only on the same page
+                key = (img.hash, img.page_num)
+                if key in seen:
                     continue
-                seen_hashes.add(img.hash)
+                seen.add(key)
                 images.append(img)
 
         return images
@@ -125,14 +131,23 @@ class ImageExtractor:
         for img_info in image_list:
             xref = img_info[0]
 
-            # Check cache first
+            # Check cache for image data (but need fresh bbox for this page)
             if xref in self._image_cache:
                 cached = self._image_cache[xref]
-                # Update page_num if this is a different page
-                if cached.page_num != page_num:
-                    # Same image on different page - might need to handle differently
-                    pass
-                images.append(cached)
+                # Get bbox for this specific page placement
+                bbox = self._get_image_bbox(page, xref, img_info)
+                # Create new instance with correct page_num and bbox
+                img = ExtractedImage(
+                    xref=cached.xref,
+                    page_num=page_num,
+                    bbox=bbox,
+                    width=cached.width,
+                    height=cached.height,
+                    image_type=cached.image_type,
+                    data=cached.data,
+                    hash=cached.hash,
+                )
+                images.append(img)
                 continue
 
             try:

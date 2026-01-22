@@ -74,7 +74,8 @@ class Question:
     category: str = ""
     options: list[Option] = field(default_factory=list)
     correct_answer: str | list[str] | None = None
-    answer: str = ""
+    answer: str | list[str] = ""
+    expected_answers: int = 1  # Number of expected answers (e.g., 2 for "välj två")
     # Position information for image association
     page_num: int = -1
     y_position: float = 0.0
@@ -93,6 +94,9 @@ class Question:
         }
         if self.category:
             d["category"] = self.category
+        if self.expected_answers != 1:
+            # 0 = multiple allowed (varies), >1 = exact count
+            d["expected_answers"] = self.expected_answers
         if self.options:
             d["options"] = [{"text": o.text, "is_correct": o.is_correct} for o in self.options]
             d["correct"] = [o.text for o in self.options if o.is_correct]
@@ -108,7 +112,10 @@ class Question:
 
     def has_answer(self) -> bool:
         """Check if this question has answer data."""
-        if self.answer:
+        if isinstance(self.answer, list):
+            if self.answer:
+                return True
+        elif self.answer:
             return True
         if self.correct_answer:
             return True

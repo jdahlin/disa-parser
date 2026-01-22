@@ -1,0 +1,142 @@
+questions:
+- num: 1
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
+    kommer underinandningen
+  expected_answers: 0
+  opts:
+  - text: det intrapleurala undertrycket ändras normalt
+  - text: både de intrapleurala och intra-alveolära undertrycken ändras mer än normalt
+    correct: true
+  - text: den transpulmonella tryckskillnaden vara större än normalt
+  - text: den transpulmonella tryckskillnaden vara normal
+    correct: true
+  - text: det intra-alveolära undertrycket vara mindre än normalt
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: I samband med laborationen i spirometri uppmätte en till synes frisk student
+    en låg vitalkapacitet. Vad är den mest sannolika förklaringen till detta?
+  opts:
+  - text: Studenten har gjort tekniskt fel i samband med undersökningen och antingen
+      glömt användanäsklämman och/eller inte slutit tätt med läpparna runt munstycket
+    correct: true
+  - text: Studenten har ett lågt hemoglobinvärde vilket återspeglas i spirometriresultatet
+  - text: Inget av övriga alternativ kan ge upphov till det uppmäta resultatet
+  - text: Studenten visar sig idrotta på elitnivå och har därför värden som kan förväntas
+      av denne
+  - text: Studenten har en odiagnosticerad restriktiv lungsjukdom
+- num: 3
+  type: tf
+  type_full: Sant/Falskt
+  pts: 3.0
+  text: a) I samband med en större blödning kommer både pO och saturation (med avseende
+    påsyrgas) vara oförändrade b) En patient med järnbristanemi kommer uppvisa en
+    oförändrad syrgaskoncentration mendäremot en sänkt syrgassaturation c) Vid utvecklad
+    lungfibros kommer såväl syrgassaturation som syrgaskoncentration varaminskade
+    jämfört med normalvärden d) En patient med emfysem efter mångårig cigarrökning
+    kommer ha kompenserat denreducerade diffusionskapaciteten med ökad saturation
+    och därmed ha nära nog normalsyrgaskoncentration i artärblod e) En skidåkare i
+    landslaget som precis lämnat höghöjdsträning och återkommit till Göteborgkommer
+    uppvisa en ökning i såväl saturation som i mängd fysikaliskt löst syrgas f) En
+    medelålders patient på din mottagning undersöks med en pulsoximeter och uppvisar
+    ensaturation på 98%. Detta betyder att patienten har en reducerad lungkapacitet
+    på 2% och börföranleda fortsatta kontroller så att inte lungkapaciteten minskar
+    ytterligare.
+  opts:
+  - text: '2'
+  - text: Falskt
+  - text: Sant
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+    correct: true
+  - text: Falskt
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: I samband med simträning inför märkestagning (silvermagistern) ingår ett moment
+    medlängddykning. Vilken av nedanstående faktorer ökar under apnéperioden/dykmomentet?
+  opts:
+  - text: pO2
+  - text: pCO2
+    correct: true
+  - text: SaO2
+  - text: Hb-värdet
+  - text: Samtliga alternativ är korrekta
+  - text: Inget av övriga alternativ är korrekt
+- num: 5
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 1.0
+  text: Vilka påståenden om fysiskt uthållighetsarbete är korrekta?
+  expected_answers: 0
+  opts:
+  - text: Hjärtfrekvensen ökar kraftigt redan innan arbetet startar, framförallt på
+      grund av signaler frånkemoreceptorer i musklerna
+  - text: Många kapillärer är stängda i vila, men öppnas vid fysiskt arbete med hjälp
+      avblodtrycksförändring, neural signalering och metaboliter
+    correct: true
+  - text: En stor ökning av hjärtminutvolym fördelas ungefär lika till alla organ
+      och vävnader eftersomdet sympatiska påslaget påverkar all vävnad likadant.
+  - text: Aktivering av baroreceptorn är den viktigaste mekanismen för ökad hjärtfrekvens
+      underarbete
+  - text: En stor ökning i hjärtminutvolym fördelas framförallt till arbetande muskler
+      med hjälp av enkombination av vasodilation och vasokonstriktion i olika vävnader.
+    correct: true
+- num: 6
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad händer om en otränad person börjar träna löpning flera gånger i veckan?
+  opts:
+  - text: Maximala hjärtminutvolymen kommer vara oförändrad
+  - text: Slagvolymen vid både vila och träning kommer att öka
+    correct: true
+  - text: Maximala hjärtfrekvensen kommer att öka
+  - text: Laktattröskeln kommer bli lägre
+- num: 7
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: 'Vilka två av de följande påståendena är korrekta när det gäller den glomerulärafiltrationshastigheten
+    (GFR)? Välj två alternativ:'
+  expected_answers: 2
+  opts:
+  - text: Minskad salthalt vid macula densa leder till signalering som minskar GFR
+  - text: GFR ökar när vi blir äldre
+  - text: Angiotensin 2 leder till konstriktion av efferenta ateriolen och ökat GFR
+    correct: true
+  - text: GFR kan ses som ett mått på antalet fungerande nefron
+    correct: true
+  - text: Det hydrostatiska trycket i glomeruli är lägre än i andra kapillärer i kroppen
+- num: 8
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: 'Vilka två av de följande alternativen är korrekta när det gäller henles slynga
+    ochmotströmsmekanismen? Välj två alternativ:'
+  expected_answers: 2
+  opts:
+  - text: Aquaporinerna i henles nedåtgående slynga är ADH beroende
+  - text: Urea kan reabsorberas i samlingsrören och recirkuleras till henles slynga
+    correct: true
+  - text: Den osmotiska gradienten i njuren går från ca 290 till 2000 mOsm/kg
+  - text: TAL cellerna är viktiga för uppbyggnaden av den osmotiska gradienten i njuren
+    correct: true
+  - text: Vasa recta har ett ovanligt högt tryck och snabbt blodflöde

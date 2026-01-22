@@ -1,0 +1,125 @@
+questions:
+- num: 1
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
+    kommer underinandningen
+  expected_answers: 0
+  opts:
+  - text: det intrapleurala undertrycket ändras normalt
+  - text: både de intrapleurala och intra-alveolära undertrycken ändras mer än normalt
+    correct: true
+  - text: den transpulmonella tryckskillnaden vara större än normalt
+  - text: den transpulmonella tryckskillnaden vara normal
+    correct: true
+  - text: det intra-alveolära undertrycket vara mindre än normalt
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: I samband med laborationen i spirometri uppmätte en till synes frisk student
+    en låg vitalkapacitet. Vad är den mest sannolika förklaringen till detta?
+  opts:
+  - text: Studenten har gjort tekniskt fel i samband med undersökningen och antingen
+      glömt användanäsklämman och/eller inte slutit tätt med läpparna runt munstycket
+    correct: true
+  - text: Studenten har ett lågt hemoglobinvärde vilket återspeglas i spirometriresultatet
+  - text: Inget av övriga alternativ kan ge upphov till det uppmäta resultatet
+  - text: Studenten visar sig idrotta på elitnivå och har därför värden som kan förväntas
+      av denne
+  - text: Studenten har en odiagnosticerad restriktiv lungsjukdom
+- num: 3
+  type: tf
+  type_full: Sant/Falskt
+  pts: 3.0
+  text: a) I samband med en större blödning kommer både pO och saturation (med avseende
+    påsyrgas) vara oförändrade b) En patient med järnbristanemi kommer uppvisa en
+    oförändrad syrgaskoncentration mendäremot en sänkt syrgassaturation c) Vid utvecklad
+    lungfibros kommer såväl syrgassaturation som syrgaskoncentration varaminskade
+    jämfört med normalvärden d) En patient med emfysem efter mångårig cigarrökning
+    kommer ha kompenserat denreducerade diffusionskapaciteten med ökad saturation
+    och därmed ha nära nog normalsyrgaskoncentration i artärblod e) En skidåkare i
+    landslaget som precis lämnat höghöjdsträning och återkommit till Göteborgkommer
+    uppvisa en ökning i såväl saturation som i mängd fysikaliskt löst syrgas f) En
+    medelålders patient på din mottagning undersöks med en pulsoximeter och uppvisar
+    ensaturation på 98%. Detta betyder att patienten har en reducerad lungkapacitet
+    på 2% och börföranleda fortsatta kontroller så att inte lungkapaciteten minskar
+    ytterligare.
+  opts:
+  - text: '2'
+  - text: Falskt
+  - text: Sant
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+    correct: true
+  - text: Falskt
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: I samband med simträning inför märkestagning (silvermagistern) ingår ett moment
+    medlängddykning. Vilken av nedanstående faktorer ökar under apnéperioden/dykmomentet?
+  opts:
+  - text: pO2
+  - text: pCO2
+    correct: true
+  - text: SaO2
+  - text: Hb-värdet
+  - text: Samtliga alternativ är korrekta
+  - text: Inget av övriga alternativ är korrekt
+- num: 15
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Hur kontrolleras att tarmens proteindigestion sker på lämplig plats för att
+    undvika skador?
+  opts:
+  - text: Proteasinhibitorer kontrollerar proteaserna som utsöndras aktiva från pankreas,
+      ochepitelytan skyddas sedan av mucus som inte kan klyvas på grund av sin struktur.
+  - text: Proteindigestionsenzymerna kräver gallsyror för att aktiveras vilket gör
+      att de aktiveras iduodenum och sedan skyddas epitelet av mucus som upprätthåller
+      en sur miljö.
+  - text: Digestionsenzymernas aktivering kontrolleras av bindande glykaner ochglykosylhydrolaser,
+      och sedan skyddas epitelet av proteasresistanta muciner.
+  - text: Digestionsenzymernas aktivering kontrolleras av en enzymatisk klyning ochproteaseinhibitorer,
+      och sedan skyddas epitelet av proteasresistanta muciner.
+    correct: true
+- num: 16
+  type: drag
+  type_full: Dra och släpp i text
+  pts: 2.0
+  text: Fyll i ord i meningen så att den blir korrekt.Mucus har flera skyddande egenskaper
+    som att påverka diffusionen av mekaniska skador vid distal transport så bidrar
+    mucus genom att bra miljö för tarmens mikrobiota då de har vilket kan ge energi
+    och utgöra bindningsytor.
+  opts:
+  - text: leptin
+  - text: vattenlösliga vitaminerkomprimera
+  - text: saltsyra och pepsinO-glykanersaltsyra och natruimhydroxid
+  - text: bryta nedfosforylering
+  - text: för att skydda magsäckens epitel och
+    correct: true
+  - text: saltsyra och bikarbonat
+    correct: true
+  - text: som produceras av panetcellerna i tunntarmen. För att minska
+    correct: true
+  - text: antimikrobiella peptider
+    correct: true
+  - text: materialet i lumen och mucinerna bidrar också till att skapa en
+    correct: true
+  - text: kapsla in
+    correct: true
+  - text: glukosaminoglykaner

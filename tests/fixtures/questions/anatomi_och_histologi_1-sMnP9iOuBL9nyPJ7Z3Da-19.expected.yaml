@@ -1,0 +1,100 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 19
+  type: txt
+  type_full: Textområde
+  pts: 2.0
+  text: 'a) Vilken muskeltyp visas i bilden ovan (0.5 p): b) Ange 3 histologiska kriterier
+    som gör att man kan avgöra vilken typ av muskelvävnad dettaär. Förklara hur dessa
+    kriterier skiljer sig från andra muskeltyper (1.5 p): Glansstrimmor som sammanfogar
+    ses mellan cellerna. Detta är unikt för hjärtmuskel. Kärnan är central, något
+    som glassmuskel visserligen också har, men skelettmuskel har många perifera kärnor.
+    Till sist är muskelvävnaden tvärstrimmig vilket glattmuskel inte är. Skelettmuskel
+    är också tvärstrimmig, men tillsammans med övriga kriterier kan man avgöra att
+    det på bilden är hjärtmuskel.'
+  cat: Muskelvävnad
+  expected_answers: 3
+  answer: Hjärtmuskulatur
+- num: 20
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket påstående stämmer gällande motorisk/sensorisk informationsflöde i muskelvävnad?
+  cat: Muskelvävnad
+  opts:
+  - text: muskelspole skickar signaler från muskelvävnad till nervsystemet
+    correct: true
+  - text: motorändplattor skickar signaler från muskelvävnad till nervsystemet
+  - text: diad skickar signaler från muskelvävnad till nervsystemet
+  - text: muskelspole skickar signaler från nervsystemet till muskelvävnad
+  answer: 'Välj ett alternativ:'
+- num: 21
+  type: ess
+  type_full: Essä
+  pts: 1.0
+  text: Vad är den bakomliggande orsaken till att man ser fler sekundära än primära
+    granula hos enmogen eosinfil?
+  cat: Blod
+  answer: När eosinofilen under mognaden delar sig halveras antalet primära granula
+    vid varje delning.Det produceras alltså inga nya primära granula under tiden.
+    Däremot produceras sekundäragranula under tiden och senare än primära granula.
+    Därför ses fler sekundära än primäragranula i en mogen eosinofil.

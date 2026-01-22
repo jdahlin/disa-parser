@@ -1,0 +1,116 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 34
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket påstående stämmer angående glandulae ad(supra-)renales?
+  cat: Endokrin
+  opts:
+  - text: De är placerade kranialt om renes, lateralt om columna vertebralis, medialt
+      om splen/hepar
+    correct: true
+  - text: I cortex finns distinkta lager namngivna utifrån vilket typhormon som bildas
+      av cellerna där
+  - text: I medulla bildas framför allt stresshormonet kortisol
+  - text: ACTH från adenohypofysen reglerar hormonproduktion och -frisättning från
+      dessa organ
+  answer: 'Välj ett alternativ:'
+- num: 35
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: anatomi 1 Medan du sitter och skriver den här tentan, kanske du äter något
+    för att bibehålla din energinivå.Det du äter skall passera igenom det långa rörsystem
+    som kallas gastrointestinalkanalen ochbearbetas på olika sätt innan resterna kommer
+    ut i toaletten. Födan du äter skall först passera genom mun och munhåla, därefter
+    vidare ner genommatstrupen – vilket påstående nedan stämmer?
+  cat: GI
+  opts:
+  - text: Esophagus hålls öppen genom kontinuerlig kontraktion av sitt cirkulära muskellager
+  - text: För att smörja födan och inleda nedbrytning tillförs saliv från spottkörtlarna,
+      där den störstakallas glandula submandibularis.
+  - text: Esophagus är placerad ventralt om trachea.
+  - text: När vi sväljer hindras föda från att fara upp i nasopharynx genom att palatum
+      molle ochuvula höjs upp.
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 36
+  type: ess
+  type_full: Essä
+  pts: 2.0
+  text: anatomi 2 Vilka organ nedom esophagus räknas till de gastrointestinala? Svara
+    på latin. (2p, per rättsvar.
+  cat: GI
+  answer: Ventriculus/Gaster, Hepar, Pancreas, Duodenum, Jejunum, Ileum, Colon och
+    Rectum.
+- num: 37
+  type: ess
+  type_full: Essä
+  pts: 2.0
+  text: histologi 1 Vilken del av magsäck är detta? Motivera ditt svar.
+  cat: GI
+  answer: I bilden syns övergången från flerskiktat oförhornat skivepitel till enkelt
+    cylinderepitel. Dettatalar för att det är övergången från esophagus till ventriculus,
+    alltså Cardia. Ringen är ritadrunt det område där cylinderepitelet tagit över
+    och där gandulae cardiae då finns i mucosan.Vi befinner oss alltså i cardia-delen
+    av magsäcken.

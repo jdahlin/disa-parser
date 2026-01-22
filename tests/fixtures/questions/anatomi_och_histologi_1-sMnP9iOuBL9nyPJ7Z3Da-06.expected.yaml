@@ -1,0 +1,97 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 5
+  type: ess
+  type_full: Essä
+  pts: 1.0
+  text: Hur många ryggkotor finns det normalt sett sammanlagt i ländryggen, bröstryggen
+    ochhalsryggen?
+  cat: Rörelseapparaten
+  answer: Halsryggen har 7 st, bröstryggen har 12 st och ländryggen har 5 st. Detta
+    är totalt 24 kotor.
+- num: 6
+  type: ess
+  type_full: Essä
+  pts: 1.0
+  text: Ange ursprung, fäste och funktion för musculus iliopsoas
+  cat: Rörelseapparaten
+  answer: 'Ursprung: ventrala sidan av os coxae och ventrala lumbardelen av columna
+    vertebralis. Fäste: Proximala femurs ventralsida. Funktion: Flexion av höftleden.'
+- num: 7
+  type: ess
+  type_full: Essä
+  pts: 1.0
+  text: Denne så kallade vitruvianske man, tecknad av Leonardo Da Vinci (1452-1519)
+    står med sinvänstra fot utåtroterad så att tårna pekar åt sidan (lateralt). I
+    vilken led sker den utåtrotation somleder till att foten hamnar i detta läge,
+    utgående från den anatomiska grundställningen?
+  cat: Rörelseapparaten
+  answer: Utåtrotationen sker i vänster höftled.
+- num: 8
+  type: ess
+  type_full: Essä
+  pts: 1.0
+  text: Beskriv den högra bröstvårtans läge i förhållande till naveln. Använd korrekt
+    anatomisklägesterminologi.
+  cat: Rörelseapparaten
+  answer: Den högra bröstvårtan är kraniellt (superiort) och lateralt placerad i förhållande
+    till naveln.

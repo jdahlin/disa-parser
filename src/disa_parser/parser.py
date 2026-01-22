@@ -10,11 +10,14 @@ import fitz
 
 from .constants import (
     CORRECT_MARKERS,
+    EXPECTED_ANSWERS_PATTERN,
     FORMATS,
     GREEN_THRESHOLD,
     INCORRECT_MARKERS,
+    MULTIPLE_ANSWERS_PATTERN,
     POINTS_PATTERN,
     QUESTION_TYPES,
+    SWEDISH_NUMBERS,
 )
 from .models import ExamMetadata, HotspotRegion, Option, ParsedExam, Question, QuestionType
 
@@ -768,6 +771,7 @@ class DISAParser:
                         answer_text = after_q
 
         question.text = self._clean_question_text(question_text)
+        question.expected_answers = self._extract_expected_answers(question_text)
         question.answer = answer_text
         question.options = options
         self._identify_correct_answers(question)
@@ -808,6 +812,50 @@ class DISAParser:
         text = re.sub(r"\s+\d+(?:[.,]\d+)?p\b", "", text)
         text = re.sub(r"\s*Hjälp\s*", "", text)
         return text.strip()
+
+    def _extract_expected_answers(self, text: str) -> int:
+        """Extract expected answer count from question text.
+
+        Detects patterns like:
+        - "Välj två", "Markera tre", "Ange 2 svar"
+        - "Vilka två av...", "Vilka tre påståenden..."
+        - "Vilka påståenden" (plural implies multiple, defaults to 2)
+        - "två korrekta", "3 alternativ"
+        - "Välj ett eller flera" (multiple allowed, count varies)
+
+        Returns:
+            Number of expected answers:
+            - 1 = single answer (default)
+            - 2, 3, etc. = exactly N answers
+            - 0 = multiple allowed, count varies (1 to all)
+        """
+        # Check for "one or more" pattern first
+        if MULTIPLE_ANSWERS_PATTERN.search(text):
+            return 0  # Multiple allowed, count varies
+
+        match = EXPECTED_ANSWERS_PATTERN.search(text)
+        if not match:
+            return 1
+
+        # Find first non-None group (pattern has multiple capture groups)
+        num_str = None
+        for group in match.groups():
+            if group:
+                num_str = group
+                break
+
+        if not num_str:
+            return 1
+
+        num_str = num_str.lower()
+
+        # "vilka påståenden" (plural) implies multiple - default to 2
+        if num_str == "påståenden":
+            return 2
+
+        if num_str.isdigit():
+            return int(num_str)
+        return SWEDISH_NUMBERS.get(num_str, 1)
 
 
 def parse_exam(pdf_path: Path | str, course: str) -> ParsedExam | None:

@@ -1,0 +1,99 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 47
+  type: drag
+  type_full: Dra och släpp i bild
+  pts: 1.0
+  text: anatomi 3 Dra rätt benämning till rätt plats (1p, 0.25 p per rätt svar)
+  cat: UG
+  opts:
+  - text: Hjälp
+  - text: vesicula seminalis
+  - text: testis
+  - text: ureter
+  - text: glandulae bulbourethrales
+  - text: Prostata
+    correct: true
+  - text: Ductus deferens
+    correct: true
+  - text: Urethra
+    correct: true
+  - text: Epididymis
+    correct: true
+- num: 48
+  type: ess
+  type_full: Essä
+  pts: 2.0
+  text: Beskriv filtrationsbarriären i njurens glomeruli och namnge viktiga strukturella
+    komponenter. Ritagärna.
+  cat: Njure histologi
+  answer: Ett fenestrerat endotel (rött) är den första delen av filtrationsbarriären.
+    Härigenom kan storaoch små molekyler passera, men celler hålls kvar i blodet.
+    Det glomerulära basalmembranet(GBM, grönt) är gemensamt för endotelet och pediklarna.
+    Det är negativt laddat och fungerardärför som en barriär mot negativt laddade
+    molekyler, t.ex. aminosyror. Det fungerar ocksådelvis som en mekanisk barriär
+    pga. de fibrer som finns i GBM. Podocyterna utgör Bowmanskapsels glomerulära epitel
+    och pediklarna (blått) fäster till GBM. Mellan pediklarna finnsfiltration slit
+    diaphragm, en dragkedjeliknande filtrationsbarriär som innehåller mycket avproteinet
+    nefrin. Detta är en mycket viktig del av barriären då den är det finaste filtret
+    somsom kan filtrera bort även små molekyler. Vätskan som kommer ut undertill i
+    bild ärprimärurin.

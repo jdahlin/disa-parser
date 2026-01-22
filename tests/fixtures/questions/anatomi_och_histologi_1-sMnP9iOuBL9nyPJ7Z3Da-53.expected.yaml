@@ -1,0 +1,84 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 53
+  type: ess
+  type_full: Essä
+  pts: 1.0
+  text: histologi 2 Vilken förändring sker i epitelet I transformationszonen i cervix
+    ?
+  cat: KUG
+  answer: Epitelet går från enkelt cylinderepitel i uterus till flerskiktat oförhornat
+    skivepitel i vagina.
+- num: 54
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: histologi 3 Vad är rätt om uterus?
+  cat: KUG
+  opts:
+  - text: Uterus har en tjock submukosa
+  - text: Hela endometriet stöts av vid menstrutionen
+  - text: Perimetriet är uppbyggt av glattmuskelceller
+  - text: Uteruskörtlarna är alltid grenade
+  - text: Uteruskörtlarna är raka under proliferationsfas
+    correct: true
+  answer: 'Välj ett alternativ:'

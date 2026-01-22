@@ -1,0 +1,93 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 28
+  type: txt
+  type_full: Textområde
+  pts: 2.0
+  text: a) Keratinocyterna utgör merparten av cellerna i epidermis. Vilka andra tre
+    celltyper finns iepidermis? Ange namn och huvudfunktion.
+  cat: Hud
+  opts:
+  - text: I stratum basale
+  answer: 'Melanocyter: producerar melanin, ett hudpigment som skyddar keratinocyternas
+    cellkärnor mot uv-strålning.  Langerhanska celler: En typ av makrofager som fagocyterar
+    oönskade ämnen/celler.  Sensoriska neuron: fria sensoriska nervcellsändar finns
+    i epidermis, däremot finns inte cellkroppen här. Fuktionen är att skicka sensoriska
+    signaler till CNS.
+
+    b) I vilket lager i epidermis sker merparten av celldelningar?   (0.5p)'
+- num: 29
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket alternativ stämmer bäst på näsans luktepitel?
+  cat: Respiration
+  opts:
+  - text: neuron med cilia som registrerar doftmolekyler och vars axon går till CNS
+    correct: true
+  - text: sensoriska celler som registrerar doftmolekyler och aktiverar neuron vars
+      axon går tillCNS
+  - text: utskott från pseudounipolära celler som registrerar doftmolekyler och vars
+      axon går tillCNS
+  - text: bipolära neuron som registrerar doftmolekyler och som aktiverar sekundära
+      neuron varsaxon går till CNS
+  answer: 'Epitelet består dels av.. Välj ett alternativ:'

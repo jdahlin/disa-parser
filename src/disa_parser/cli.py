@@ -596,13 +596,15 @@ def _parse_and_export_worker(args: tuple[str, str]) -> tuple[int, int, str | Non
 
             if q.category:
                 data['q']['cat'] = q.category
+            if q.expected_answers != 1:
+                # 0 = multiple allowed (varies), >1 = exact count
+                data['q']['expected_answers'] = q.expected_answers
             if q.options:
-                data['q']['opts'] = [o.text for o in q.options]
-                correct_indices = [i for i, o in enumerate(q.options) if o.is_correct]
-                if qtype == 'mc1' and correct_indices:
-                    data['q']['correct'] = correct_indices[0]
-                elif correct_indices:
-                    data['q']['correct'] = correct_indices
+                # Include correct flag for each option
+                data['q']['opts'] = [
+                    {'text': o.text, 'correct': True} if o.is_correct else {'text': o.text}
+                    for o in q.options
+                ]
             if q.answer:
                 data['q']['answer'] = q.answer
 

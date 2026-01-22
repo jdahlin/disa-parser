@@ -1,0 +1,120 @@
+questions:
+- num: 1
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
+    kommer underinandningen
+  expected_answers: 0
+  opts:
+  - text: det intrapleurala undertrycket ändras normalt
+  - text: både de intrapleurala och intra-alveolära undertrycken ändras mer än normalt
+    correct: true
+  - text: den transpulmonella tryckskillnaden vara större än normalt
+  - text: den transpulmonella tryckskillnaden vara normal
+    correct: true
+  - text: det intra-alveolära undertrycket vara mindre än normalt
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: I samband med laborationen i spirometri uppmätte en till synes frisk student
+    en låg vitalkapacitet. Vad är den mest sannolika förklaringen till detta?
+  opts:
+  - text: Studenten har gjort tekniskt fel i samband med undersökningen och antingen
+      glömt användanäsklämman och/eller inte slutit tätt med läpparna runt munstycket
+    correct: true
+  - text: Studenten har ett lågt hemoglobinvärde vilket återspeglas i spirometriresultatet
+  - text: Inget av övriga alternativ kan ge upphov till det uppmäta resultatet
+  - text: Studenten visar sig idrotta på elitnivå och har därför värden som kan förväntas
+      av denne
+  - text: Studenten har en odiagnosticerad restriktiv lungsjukdom
+- num: 3
+  type: tf
+  type_full: Sant/Falskt
+  pts: 3.0
+  text: a) I samband med en större blödning kommer både pO och saturation (med avseende
+    påsyrgas) vara oförändrade b) En patient med järnbristanemi kommer uppvisa en
+    oförändrad syrgaskoncentration mendäremot en sänkt syrgassaturation c) Vid utvecklad
+    lungfibros kommer såväl syrgassaturation som syrgaskoncentration varaminskade
+    jämfört med normalvärden d) En patient med emfysem efter mångårig cigarrökning
+    kommer ha kompenserat denreducerade diffusionskapaciteten med ökad saturation
+    och därmed ha nära nog normalsyrgaskoncentration i artärblod e) En skidåkare i
+    landslaget som precis lämnat höghöjdsträning och återkommit till Göteborgkommer
+    uppvisa en ökning i såväl saturation som i mängd fysikaliskt löst syrgas f) En
+    medelålders patient på din mottagning undersöks med en pulsoximeter och uppvisar
+    ensaturation på 98%. Detta betyder att patienten har en reducerad lungkapacitet
+    på 2% och börföranleda fortsatta kontroller så att inte lungkapaciteten minskar
+    ytterligare.
+  opts:
+  - text: '2'
+  - text: Falskt
+  - text: Sant
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+    correct: true
+  - text: Falskt
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+  - text: Sant
+  - text: Falskt
+    correct: true
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: I samband med simträning inför märkestagning (silvermagistern) ingår ett moment
+    medlängddykning. Vilken av nedanstående faktorer ökar under apnéperioden/dykmomentet?
+  opts:
+  - text: pO2
+  - text: pCO2
+    correct: true
+  - text: SaO2
+  - text: Hb-värdet
+  - text: Samtliga alternativ är korrekta
+  - text: Inget av övriga alternativ är korrekt
+- num: 9
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: 'Vilka två av de följande påståendena är korrekta när det gäller kroppens
+    vattenbalans? Välj två alternativ:'
+  expected_answers: 2
+  opts:
+  - text: Aldosteronfrisättning från binjurebarken leder till insättandet av aquaporiner
+      luminalt isamlingsrören
+  - text: Den största delen av vårt kroppsvatten finner vi extracellulärt
+  - text: Osmoreceptorer i hypothalamus reagerar på förhöjd osmolaritet och leder
+      till frisättning avADH samt törst
+    correct: true
+  - text: Juxtaglomerulära celler i njuren frisätter renin via signalering från sympatikus
+      när baro- ochvolymsreceptorer avlastas
+    correct: true
+  - text: Vid minskad extracellulär volym så kommer ANP att frisättas från hjärtats
+      förmak
+- num: 10
+  type: mcn
+  type_full: Flersvarsfråga
+  pts: 2.0
+  text: 'Vilka två av de följande alternativen är korrekta kring syra-bas balansen
+    i kroppen? Välj två alternativ:'
+  expected_answers: 2
+  opts:
+  - text: Vid akut respiratorisk acidos kommer bikarbonathalten i blodet att vara
+      förhöjd
+  - text: Kompensationsmekanismerna vid syra-bas störningar kan leda till att pH blir
+      normalt
+  - text: Bikarbonat-reabsorptionen sker främst i proximala tubuli och är beroende
+      av karbanhydras
+    correct: true
+  - text: För att ny bikarbonat ska kunna bildas i njuren behöver en vätejon lämna
+      kroppen viaurinen
+    correct: true
+  - text: Vid metabol alkalos kommer njuren ökar produktionen av bikarbonat

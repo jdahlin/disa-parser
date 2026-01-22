@@ -1,0 +1,115 @@
+questions:
+- num: 1
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: En rörelse där Axelleden vrider sig runt en horisontell / transversell axel
+    kallas…
+  cat: Rörelseapparaten
+  opts:
+  - text: Lateralflexion
+  - text: Flexion / Extension
+    correct: true
+  - text: Pronation / Supination
+  - text: Abduktion / Adduktion
+  - text: Inåt- / Utåtrotation
+  answer: 'Välj ett alternativ:'
+- num: 2
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande kranialben ingår inte i ögonhålan (orbita)?
+  cat: Rörelseapparaten
+  opts:
+  - text: Os temporale
+    correct: true
+  - text: Os ethmoidale
+  - text: Os maxilla
+  - text: Os frontale
+  answer: 'Välj ett alternativ:'
+- num: 3
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är sant om övre extremitets anatomi?
+  cat: Rörelseapparaten
+  opts:
+  - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
+  - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
+      ochdistala falanger
+  - text: Tummen har tre falanger precis som övriga fingrar
+  - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
+      (humerus)
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 4
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vilket av följande påståenden är falskt?
+  cat: Rörelseapparaten
+  opts:
+  - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
+      och kyfos ibröstrygg och bäcken
+  - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
+      kontraherar ochantagonisten relaxerar.
+  - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
+      och fäste påolika sidor om leden.
+  - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
+      normalt sett enflexion i höftleden och en extension i knäleden
+    correct: true
+  answer: 'Välj ett alternativ:'
+- num: 24
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Vad är mest korrekt om bindväv?
+  cat: Bindväv
+  opts:
+  - text: Benvävnad och broskvävnad är exempel på specialiserade bindvävstyper
+    correct: true
+  - text: Mesenkymal bindväv finns på flera olika ställen i kroppen hos en vuxen individ
+  - text: Fettväv är en stram regelbunden bindvävstyp
+  - text: I senor återfinns till stor del lucker bindväv
+  answer: 'Välj ett alternativ:'
+- num: 25
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Var hittar du framförallt lucker bindväv?
+  cat: Bindväv
+  opts:
+  - text: I senor
+  - text: På den apikala sidan av ett epitel
+  - text: I lamina propria
+    correct: true
+  - text: I tunica media
+  answer: 'Välj ett alternativ:'
+- num: 26
+  type: mc1
+  type_full: Flervalsfråga
+  pts: 1.0
+  text: Trådbrosk finns på olika platser i kroppen. Vilket alternativ nedan anger
+    en del av kroppen därtrådbrosk återfinns?
+  cat: Bindväv
+  opts:
+  - text: Ligament mellan ryggkotor
+  - text: Ytterörat
+  - text: Menisk
+    correct: true
+  - text: Näsan
+  answer: 'Välj ett alternativ:'
+- num: 27
+  type: ess
+  type_full: Sammansatt
+  pts: 1.0
+  text: Bilden ovan (till vänster) visar ett tvärsnitt av en hårfollikel. a) Vilken
+    bokstav markerar den struktur som är kontinuerlig med epidermis? b) På vilken
+    nivå är snittet? Ange rätt siffra enligt figur till höger. (0,5p per rätt svar,
+    totalt)
+  cat: Hud
+  opts:
+  - text: D
+    correct: true
+  - text: '2'
+    correct: true

@@ -83,3 +83,31 @@ GREEN_THRESHOLD: tuple[float, float, float] = (0.3, 0.4, 0.2)
 
 # Regex patterns
 POINTS_PATTERN: re.Pattern = re.compile(r"Totalpoäng:\s*(\d+(?:[.,]\d+)?)")
+
+# Swedish number words to digits
+SWEDISH_NUMBERS: dict[str, int] = {
+    "ett": 1, "en": 1, "två": 2, "tre": 3, "fyra": 4, "fem": 5,
+    "sex": 6, "sju": 7, "åtta": 8, "nio": 9, "tio": 10,
+}
+
+# Pattern to detect expected answer count from question text
+# Matches patterns like:
+#   - "Välj två", "Markera tre", "Ange 2 svar"
+#   - "Vilka två av...", "Vilka tre påståenden..."
+#   - "Vilka påståenden" (plural implies multiple, defaults to 2)
+#   - "två korrekta", "3 alternativ"
+EXPECTED_ANSWERS_PATTERN: re.Pattern = re.compile(
+    r"(?:välj|markera|ange|kryssa\s+för)\s+(?:de\s+)?(\d+|ett|en|två|tre|fyra|fem)"
+    r"|vilka\s+(\d+|två|tre|fyra)"
+    r"|vilka\s+(påståenden)"
+    r"|(\d+|två|tre|fyra)\s+(?:korrekta|rätta)"
+    r"|(\d+)\s*(?:svar|alternativ)",
+    re.IGNORECASE
+)
+
+# Pattern for "one or more" answers (count unknown/variable)
+# Matches: "Välj ett eller flera alternativ"
+MULTIPLE_ANSWERS_PATTERN: re.Pattern = re.compile(
+    r"välj\s+ett\s+eller\s+flera",
+    re.IGNORECASE
+)

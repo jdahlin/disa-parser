@@ -63,10 +63,10 @@ questions:
     vid var fjärde aminosyra. Förekommer ofta i uppsättningen 7TM som består av 7
     alfahelixar som löper tvärs över membranet. Dessa  bygger upp tex kanaler för
     transport över membrean och har ofta polära aminosyror på insidan och opolära
-    på utsidan.   Beta-barrels: Består av antiparallella beta-strängar som sitter
-    ihop med varandra i membranet som säkerställer förankring och bidrar också till
-    transport över membranet.    Partiellt associerade proteiner: Består av hydrofoba
-    aminosyror och är vanliga i i enzymer i membranets mitt. Finns ofta intill kanalproteinet.'
+    på utsidan.  Beta-barrels: Består av antiparallella beta-strängar som sitter ihop
+    med varandra i membranet som säkerställer förankring och bidrar också till transport
+    över membranet.  Partiellt associerade proteiner: Består av hydrofoba aminosyror
+    och är vanliga i i enzymer i membranets mitt. Finns ofta intill kanalproteinet.'
 - num: 17
   type: ess
   type_full: Essä
@@ -76,6 +76,6 @@ questions:
     I vilket av cellens membran finns transportören? C) Vad driver transporten?
   opts:
   - text: Antiport som är en aktiv transportör av 2 olika föreningar som transporteras
-      åt olika håll (en in och en ut)   B) I mitokondriets inre membran   C) Den elektrokemiska
+      åt olika håll (en in och en ut)  B) I mitokondriets inre membran  C) Den elektrokemiska
       gradienten av vätejoner mellan MMU och matrix.
-  answer: Max 40 ord.    Skriv in ditt svar här
+  answer: Max 40 ord.  Skriv in ditt svar här

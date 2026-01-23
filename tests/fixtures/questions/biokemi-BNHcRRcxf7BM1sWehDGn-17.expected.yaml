@@ -61,9 +61,9 @@ questions:
     I vilket av cellens membran finns transportören? C) Vad driver transporten?
   opts:
   - text: Antiport som är en aktiv transportör av 2 olika föreningar som transporteras
-      åt olika håll (en in och en ut)   B) I mitokondriets inre membran   C) Den elektrokemiska
+      åt olika håll (en in och en ut)  B) I mitokondriets inre membran  C) Den elektrokemiska
       gradienten av vätejoner mellan MMU och matrix.
-  answer: Max 40 ord.    Skriv in ditt svar här
+  answer: Max 40 ord.  Skriv in ditt svar här
 - num: 18
   type: ess
   type_full: Essä
@@ -75,6 +75,6 @@ questions:
     öka den kinetiska energin hos molekylerna i systemet vilket kommer göra att de
     börjar kollidera på ett sätt som gör att de sprids ut mer och mer vilket gör att
     entropin ökar, så kallad brownsk rörelse. Åt andra hållet kan man också sänka
-    temperaturen vilket får motsatt effekt.   Ett annat sätt är att ändra substratkoncentrationen
+    temperaturen vilket får motsatt effekt.  Ett annat sätt är att ändra substratkoncentrationen
     genom att tex tillsätta mer substrat, detta gör att ämnena hämnar mer tätt ihop
     pga att det blir fler molekyler på samma yta.

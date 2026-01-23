@@ -61,7 +61,7 @@ questions:
     vid vilken sjukdom används allopurinol som läkemedel?
   opts:
   - text: Xantinoxidas är enzymet och sjukdomen är gikt.
-  answer: (Max 20 ord.)   Skriv in ditt svar här
+  answer: (Max 20 ord.)  Skriv in ditt svar här
 - num: 31
   type: ess
   type_full: Essä
@@ -72,7 +72,7 @@ questions:
   opts:
   - text: Alanin är aminosyran och alanin aminotransferas är enzymet B) Aspartat är
       aminosyran och aspartat aminotransferas är enzymet.
-  answer: (Max 20 ord.)   Skriv in ditt svar här
+  answer: (Max 20 ord.)  Skriv in ditt svar här
 - num: 32
   type: ess
   type_full: Essä
@@ -82,7 +82,7 @@ questions:
   expected_answers: 3
   opts:
   - text: Glukos 6-fosfat går in och bildar NADPH, ribulos 5-fosfat och Cyp 450mm.
-  answer: Max 20 ord.   Skriv in ditt svar här
+  answer: Max 20 ord.  Skriv in ditt svar här
 - num: 33
   type: ess
   type_full: Essä

@@ -5,6 +5,7 @@ questions:
   pts: 2.0
   text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
     kommer underinandningen
+  expected_answers: 2
   opts:
   - text: det intrapleurala undertrycket ändras normalt
   - text: både de intrapleurala och intra-alveolära undertrycken ändras mer än normalt

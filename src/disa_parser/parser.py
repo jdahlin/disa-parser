@@ -1087,6 +1087,12 @@ class DISAParser:
         question.options = options
         self._identify_correct_answers(question)
 
+        # For Flersvarsfråga without explicit count, use actual correct option count
+        if question.question_type == "Flersvarsfråga" and question.expected_answers == 1:
+            correct_count = sum(1 for o in question.options if o.is_correct)
+            if correct_count > 1:
+                question.expected_answers = correct_count
+
     def _parse_option(self, text: str, block: dict) -> Option | None:
         """Parse a single answer option from text."""
         text = text.strip()

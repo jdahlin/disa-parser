@@ -228,12 +228,17 @@ class DISAParser:
 
     def _find_first_question_page(self) -> int:
         """Find the page number where questions start."""
+        # Markers that indicate a question page (essay, MCQ, etc.)
+        question_markers = [
+            "Skriv in ditt svar",
+            "Totalpoäng:",
+            "Bifoga ritning",
+            "Välj ett alternativ",  # MCQ marker
+            "Välj ett eller flera",  # Multi-select MCQ marker
+        ]
         for page_num in range(len(self.doc)):
             text = self.doc[page_num].get_text()
-            if any(
-                m in text
-                for m in ["Skriv in ditt svar", "Totalpoäng:", "Bifoga ritning"]
-            ):
+            if any(m in text for m in question_markers):
                 if re.search(r"^\d{1,3}\s+\w", text, re.MULTILINE):
                     return page_num
         return 3 if len(self.doc) > 3 else 1
@@ -323,6 +328,32 @@ class DISAParser:
                             current_question.points = float(
                                 match.group(1).replace(",", ".")
                             )
+                    # Special handling for Textalternativ (dropdown) questions
+                    elif current_question.question_type == "Textalternativ":
+                        # Skip dropdown option lists (high x, starts with "(")
+                        if x_pos >= 200 and text.startswith("("):
+                            continue
+                        # Selected dropdown answers at x ~65-67 with is_correct
+                        # These are single-word selections, not statement text
+                        if (
+                            block.get("is_correct")
+                            and 63 < x_pos < 68
+                            and len(text) < 50
+                            and not text.startswith("(")
+                            and ")" not in text  # Not part of statement
+                        ):
+                            current_answer_parts.append(text)
+                        elif not self._is_skippable(text):
+                            current_text_parts.append(text)
+                    # Special handling for Sant/Falskt compound questions
+                    elif current_question.question_type == "Sant/Falskt":
+                        if text in ("Sant", "Falskt"):
+                            opt = Option(
+                                text=text, is_correct=block.get("is_correct", False)
+                            )
+                            current_options.append(opt)
+                        elif not self._is_skippable(text):
+                            current_text_parts.append(text)
                     elif is_option_pos and self._looks_like_option(text):
                         opt = self._parse_option(text, block)
                         if opt:
@@ -550,6 +581,9 @@ class DISAParser:
         # Single letters A-E or digits 1-9 are valid options (image-based MCQ)
         if re.match(r"^[A-E1-9]$", text):
             return True
+        # Chemical ion notation like H+, K+, Na+, Ca2+, Mg2+ (short but valid)
+        if re.match(r"^[A-Za-z]{1,2}\d*[+-]$", text):
+            return True
         if len(text) < 3 or len(text) > 300:
             return False
         if "Totalpoäng:" in text or "poäng:" in text.lower():
@@ -634,6 +668,7 @@ class DISAParser:
             ]
 
         # Georgia font text is answer text for txt/essay questions
+        # Also handles Textalternativ (dropdown) selected values
         if not answer_text and answer_parts:
             font_answer_types = [
                 "Textområde",
@@ -644,9 +679,10 @@ class DISAParser:
                 "Essäfråga",
                 "Kortsvarsfråga",
                 "Hotspot",
+                "Textalternativ",
             ]
             if question.question_type in font_answer_types:
-                answer_text = " ".join(answer_parts)
+                answer_text = ", ".join(answer_parts)
 
         word_limit_match = re.search(
             r"\(Max\s+\d+\s+ord\)\s*(.+)$", full_text, re.DOTALL | re.IGNORECASE
@@ -784,6 +820,8 @@ class DISAParser:
             text = re.sub(r"^[○●◯◉]\s*", "", text)
             text = re.sub(r"^[a-zA-Z]\)\s*", "", text)
             text = re.sub(r"^[a-zA-Z]\.\s*", "", text)
+            # Strip orphan close-paren at start (PDF artifact)
+            text = re.sub(r"^\)\s*", "", text)
         for m in CORRECT_MARKERS + INCORRECT_MARKERS:
             text = text.replace(m, "")
         text = text.strip()

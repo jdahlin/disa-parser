@@ -47,7 +47,6 @@ questions:
     på 2% och börföranleda fortsatta kontroller så att inte lungkapaciteten minskar
     ytterligare.
   opts:
-  - text: '2'
   - text: Falskt
   - text: Sant
     correct: true
@@ -130,16 +129,8 @@ questions:
   pts: 1.0
   text: Välj korrekt alternativ bland svarsalternativen under. Du har precis avnjutit
     en god middag och sätter dig I soffan för att titta på en film. Vid detta tillfälle
-    dominerar det (sympatiska, somatomotoriska,
-  opts:
-  - text: parasympatiska
-    correct: true
-  - text: ökarkonstringeras
-    correct: true
-  - text: (är oförändrad, minskar, ökar)  och att pupillen
-    correct: true
-  - text: (konstringeras, är oförändrad, dilateras)  . Den viktigste neurotransmittorn
-      i denna del av
-    correct: true
-  - text: acetylkolin
-    correct: true
+    dominerar det (sympatiska, somatomotoriska, parasympatiska parasympatiska) nervsystemet.
+    Detta får bland annat till följd att tarmperistaltik ökarkonstringeras (är oförändrad,
+    minskar, ökar) och att pupillen (konstringeras, är oförändrad, dilateras) . Den
+    viktigste neurotransmittorn i denna del av nervsystemet är (GABA, acetylkolin,
+    adrenalin, noradrenalin). acetylkolin

@@ -47,7 +47,6 @@ questions:
     på 2% och börföranleda fortsatta kontroller så att inte lungkapaciteten minskar
     ytterligare.
   opts:
-  - text: '2'
   - text: Falskt
   - text: Sant
     correct: true

@@ -74,7 +74,7 @@ questions:
     correct: true
   - text: '2'
     correct: true
-  answer: valva tricuspidalis valva mitralis valva pulmonalis valva aortae
+  answer: valva tricuspidalis, valva mitralis, valva pulmonalis, valva aortae
 - num: 12
   type: txt
   type_full: Textområde

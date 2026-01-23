@@ -64,6 +64,17 @@ class HotspotRegion:
 
 
 @dataclass
+class DropdownChoice:
+    """A dropdown choice for Textalternativ questions."""
+
+    answer: str  # The selected/correct answer
+    options: list[str] = field(default_factory=list)  # All available options
+
+    def to_dict(self) -> dict:
+        return {"answer": self.answer, "options": self.options}
+
+
+@dataclass
 class Question:
     """A parsed exam question."""
 
@@ -75,7 +86,7 @@ class Question:
     options: list[Option] = field(default_factory=list)
     correct_answer: str | list[str] | None = None
     answer: str | list[str] = ""
-    expected_answers: int = 1  # Number of expected answers (e.g., 2 for "välj två")
+    expected_answers: int | str = 1  # Number of expected answers (e.g., 2, "2+")
     # Position information for image association
     page_num: int = -1
     y_position: float = 0.0
@@ -83,6 +94,8 @@ class Question:
     images: list[ImageRef] = field(default_factory=list)
     # Hotspot answer regions (blue highlighted areas)
     hotspot_regions: list[HotspotRegion] = field(default_factory=list)
+    # Dropdown choices for Textalternativ questions (DSL format)
+    choices: dict[str, DropdownChoice] = field(default_factory=dict)
 
     def to_dict(self) -> dict:
         """Convert question to dictionary format."""
@@ -95,14 +108,12 @@ class Question:
         if self.category:
             d["category"] = self.category
         if self.expected_answers != 1:
-            # 0 = multiple allowed (varies), >1 = exact count
             d["expected_answers"] = self.expected_answers
         if self.options:
             d["options"] = [{"text": o.text, "is_correct": o.is_correct} for o in self.options]
-            d["correct"] = [o.text for o in self.options if o.is_correct]
-        elif self.correct_answer:
-            d["correct"] = self.correct_answer
-        if self.answer:
+        if self.choices:
+            d["choices"] = {k: v.to_dict() for k, v in self.choices.items()}
+        elif self.answer:
             d["answer"] = self.answer
         if self.images:
             d["images"] = [img.to_dict() for img in self.images]
@@ -112,6 +123,8 @@ class Question:
 
     def has_answer(self) -> bool:
         """Check if this question has answer data."""
+        if self.choices:
+            return True
         if isinstance(self.answer, list):
             if self.answer:
                 return True

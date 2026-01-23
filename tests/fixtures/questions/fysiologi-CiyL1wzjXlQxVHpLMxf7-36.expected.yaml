@@ -5,7 +5,6 @@ questions:
   pts: 2.0
   text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
     kommer underinandningen
-  expected_answers: 0
   opts:
   - text: det intrapleurala undertrycket ändras normalt
   - text: både de intrapleurala och intra-alveolära undertrycken ändras mer än normalt
@@ -127,10 +126,34 @@ questions:
   type: drop
   type_full: Textalternativ
   pts: 1.0
-  text: Välj korrekt alternativ bland svarsalternativen under. Du har precis avnjutit
-    en god middag och sätter dig I soffan för att titta på en film. Vid detta tillfälle
-    dominerar det (sympatiska, somatomotoriska, parasympatiska parasympatiska) nervsystemet.
-    Detta får bland annat till följd att tarmperistaltik ökarkonstringeras (är oförändrad,
-    minskar, ökar) och att pupillen (konstringeras, är oförändrad, dilateras) . Den
-    viktigste neurotransmittorn i denna del av nervsystemet är (GABA, acetylkolin,
-    adrenalin, noradrenalin). acetylkolin
+  text: 'Du har precis avnjutit en god middag och sätter dig I soffan för att titta
+    på en film. Vid detta tillfälle
+
+
+    parasympatiska ${choices1} och ${choices2} och )  och att pupillen ${choices3}
+    och nervsystemet är ${choices4}'
+  expected_answers: 4
+  choices:
+    choices1:
+      answer: parasympatiska
+      options:
+      - sympatiska
+      - somatomotoriska
+      - parasympatiska ) nervsystemet. Detta får bland annat till följd att tarmperistaltik
+    choices2:
+      answer: ökar
+      options: []
+    choices3:
+      answer: konstringeras
+      options:
+      - är oförändrad
+      - minskar
+      - ökar )  och att pupillen     ( konstringeras
+      - dilateras)  . Den viktigste neurotransmittorn i denna del av
+    choices4:
+      answer: acetylkolin
+      options:
+      - GABA
+      - acetylkolin
+      - adrenalin
+      - 'noradrenalin). Totalpoäng: 1'

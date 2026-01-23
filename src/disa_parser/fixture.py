@@ -18,6 +18,7 @@ Usage:
 from __future__ import annotations
 
 import base64
+import gzip
 import json
 from pathlib import Path
 from typing import TYPE_CHECKING, Any
@@ -153,11 +154,19 @@ class MockDocument:
         pass
 
 
+def _read_fixture_file(path: Path) -> dict:
+    """Read a fixture file, handling gzip compression."""
+    if path.suffix == ".gz":
+        with gzip.open(path, "rt", encoding="utf-8") as f:
+            return json.load(f, object_hook=fixture_decoder)
+    return json.loads(path.read_text(), object_hook=fixture_decoder)
+
+
 def load_fixture(fixture: dict | str | Path) -> MockDocument:
     """Load fixture and return mock document.
 
     Args:
-        fixture: Dict, JSON string, or path to JSON file
+        fixture: Dict, JSON string, or path to JSON file (or .json.gz)
 
     Returns:
         MockDocument that mimics PyMuPDF document
@@ -166,7 +175,7 @@ def load_fixture(fixture: dict | str | Path) -> MockDocument:
         return MockDocument(fixture)
 
     if isinstance(fixture, Path):
-        fixture = json.loads(fixture.read_text(), object_hook=fixture_decoder)
+        fixture = _read_fixture_file(fixture)
         return MockDocument(fixture)
 
     # It's a string - try as file path first, then as JSON
@@ -180,7 +189,7 @@ def load_fixture(fixture: dict | str | Path) -> MockDocument:
         # Try as file path
         path = Path(fixture)
         if path.exists():
-            fixture = json.loads(path.read_text(), object_hook=fixture_decoder)
+            fixture = _read_fixture_file(path)
             return MockDocument(fixture)
 
         # Fall back to parsing as JSON

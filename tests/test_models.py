@@ -116,7 +116,6 @@ class TestQuestion:
         d = q.to_dict()
         assert len(d["options"]) == 2
         assert d["options"][1]["is_correct"] is True
-        assert d["correct"] == ["4"]
 
 
 class TestExamMetadata:

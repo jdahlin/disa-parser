@@ -4,7 +4,7 @@ These tests load JSON fixtures extracted from real DISA exam PDFs and verify
 that the parser extracts the same data when parsing the fixture.
 
 Fixtures are stored in tests/fixtures/questions/ with naming:
-    {course}-{exam_id}-{question_num:02d}.json
+    {course}-{exam_id}-{question_num:02d}.json.gz
 
 To add new fixtures, use:
     uv run scripts/extract_question_fixtures.py path/to/exam.pdf -o tests/fixtures/questions/
@@ -12,6 +12,7 @@ To add new fixtures, use:
 
 from __future__ import annotations
 
+import gzip
 import json
 from pathlib import Path
 from typing import Any
@@ -26,7 +27,10 @@ FIXTURES_DIR = Path(__file__).parent / "fixtures" / "questions"
 
 
 def load_question_fixture(fixture_path: Path) -> dict[str, Any]:
-    """Load a question fixture file."""
+    """Load a question fixture file (supports .json and .json.gz)."""
+    if fixture_path.suffix == ".gz":
+        with gzip.open(fixture_path, "rt", encoding="utf-8") as f:
+            return json.load(f, object_hook=fixture_decoder)
     return json.loads(fixture_path.read_text(), object_hook=fixture_decoder)
 
 
@@ -36,9 +40,9 @@ def discover_fixtures() -> list[tuple[str, Path]]:
         return []
 
     fixtures = []
-    for fixture_path in sorted(FIXTURES_DIR.glob("*.json")):
-        # Create a readable test ID from filename
-        test_id = fixture_path.stem  # e.g., "fysiologi-CiyL1wzjXlQxVHpLMxf7-01"
+    for fixture_path in sorted(FIXTURES_DIR.glob("*.json.gz")):
+        # Create a readable test ID from filename (remove .json.gz)
+        test_id = fixture_path.stem.removesuffix(".json")  # e.g., "fysiologi-CiyL1wzjXlQxVHpLMxf7-01"
         fixtures.append((test_id, fixture_path))
 
     return fixtures
@@ -207,7 +211,7 @@ def test_fixtures_exist():
     if not FIXTURES_DIR.exists():
         pytest.skip(f"Fixtures directory not found: {FIXTURES_DIR}")
 
-    fixtures = list(FIXTURES_DIR.glob("*.json"))
+    fixtures = list(FIXTURES_DIR.glob("*.json.gz"))
     assert len(fixtures) > 0, "No fixture files found"
     print(f"Found {len(fixtures)} fixture files")
 
@@ -217,7 +221,7 @@ def test_fixture_format():
     if not FIXTURES_DIR.exists():
         pytest.skip(f"Fixtures directory not found: {FIXTURES_DIR}")
 
-    for fixture_path in list(FIXTURES_DIR.glob("*.json"))[:3]:  # Check first 3
+    for fixture_path in list(FIXTURES_DIR.glob("*.json.gz"))[:3]:  # Check first 3
         fixture = load_question_fixture(fixture_path)
 
         assert "source" in fixture, f"Missing 'source' in {fixture_path.name}"

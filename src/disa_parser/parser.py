@@ -19,7 +19,7 @@ from .constants import (
     QUESTION_TYPES,
     SWEDISH_NUMBERS,
 )
-from .models import ExamMetadata, HotspotRegion, Option, ParsedExam, Question, QuestionType
+from .models import DropdownChoice, ExamMetadata, HotspotRegion, Option, ParsedExam, Question, QuestionType
 
 if TYPE_CHECKING:
     from .fixture import MockDocument
@@ -475,6 +475,274 @@ class DISAParser:
                     blue_regions.append((int(x), int(y), int(w), int(h)))
         return blue_regions
 
+    def _get_dropdown_boxes(self, page: Any) -> list[dict]:
+        """Detect dropdown boxes on a page.
+
+        Dropdown boxes are identified by:
+        - Rounded rectangle with gray border (0.8, 0.8, 0.8)
+        - White fill
+        - Multiple curve items (rounded corners)
+
+        Returns:
+            List of dicts with 'rect' (as dict with x0,y0,x1,y1) and 'y_mid' keys,
+            sorted by y position.
+        """
+        dropdowns = []
+        for d in page.get_drawings():
+            rect = d.get("rect")
+            color = d.get("color")
+            items = d.get("items", [])
+
+            if not rect:
+                continue
+
+            # Handle both fitz.Rect objects and list/tuple formats
+            if hasattr(rect, "y0"):
+                # fitz.Rect object
+                rect_dict = {"x0": rect.x0, "y0": rect.y0, "x1": rect.x1, "y1": rect.y1}
+            elif isinstance(rect, (list, tuple)) and len(rect) >= 4:
+                # List/tuple format [x0, y0, x1, y1]
+                rect_dict = {"x0": rect[0], "y0": rect[1], "x1": rect[2], "y1": rect[3]}
+            else:
+                continue
+
+            # Gray bordered rectangles with many curve points = dropdown boxes
+            if (
+                color
+                and len(color) >= 3
+                and abs(color[0] - 0.8) < 0.1
+                and abs(color[1] - 0.8) < 0.1
+                and abs(color[2] - 0.8) < 0.1
+                and len(items) >= 15
+            ):
+                y_mid = (rect_dict["y0"] + rect_dict["y1"]) / 2
+                dropdowns.append({"rect": rect_dict, "y_mid": y_mid})
+
+        # Sort by y position
+        dropdowns.sort(key=lambda x: x["y_mid"])
+        return dropdowns
+
+    def _parse_dropdown_question(self, question: Question, page: Any) -> bool:
+        """Parse a Textalternativ question with dropdown boxes.
+
+        Extracts dropdown boxes and their selected values, creates DSL format
+        with ${choices1}, ${choices2}, etc. placeholders.
+
+        Returns:
+            True if dropdowns were found and parsed, False otherwise.
+        """
+        dropdowns = self._get_dropdown_boxes(page)
+        if not dropdowns:
+            return False
+
+        # Get all text spans with position and color
+        text_dict = page.get_text("dict")
+        spans = []
+        for block in text_dict.get("blocks", []):
+            if block.get("type") != 0:
+                continue
+            for line in block.get("lines", []):
+                for span in line.get("spans", []):
+                    text = span["text"]
+                    # Skip page numbers like "13/25"
+                    if re.match(r"^\d+/\d+$", text.strip()):
+                        continue
+                    spans.append(
+                        {
+                            "text": text,
+                            "bbox": span["bbox"],
+                            "color": span.get("color", 0),
+                            "is_green": span.get("color", 0) == 0x008000,
+                        }
+                    )
+
+        # Sort spans by y then x
+        spans.sort(key=lambda s: (s["bbox"][1], s["bbox"][0]))
+
+        # Find the question number line to determine where this question starts
+        q_num = question.number
+        question_start_y = 0
+        for span in spans:
+            text = span["text"].strip()
+            if re.match(rf"^{q_num}\s*$", text) or re.match(rf"^{q_num}\s+[A-Z]", text):
+                question_start_y = span["bbox"][1]
+                break
+
+        # Extract selected value from each dropdown
+        choices = {}
+        for i, dd in enumerate(dropdowns):
+            rect = dd["rect"]
+            choice_key = f"choices{i + 1}"
+
+            # Find text inside dropdown box
+            selected = ""
+            for span in spans:
+                sb = span["bbox"]
+                if rect["x0"] < sb[0] < rect["x1"] and rect["y0"] < sb[1] < rect["y1"]:
+                    selected = span["text"].strip()
+                    break
+
+            # Find options after dropdown - look for "(" followed by comma-separated list
+            # The options are in parentheses, with the correct answer in green
+            # Options can be on the same line (to the right) or below the dropdown
+            options = []
+
+            # Find next dropdown y position (or large gap = end of section)
+            next_dd_y = 9999
+            if i + 1 < len(dropdowns):
+                next_dd_y = dropdowns[i + 1]["rect"]["y0"]
+
+            # Collect text starting with "(" after this dropdown
+            options_parts = []
+            in_options = False
+            paren_depth = 0
+
+            for span in spans:
+                sb = span["bbox"]
+                text = span["text"]
+                y = sb[1]
+                x = sb[0]
+
+                # Skip text before dropdown
+                if y < rect["y0"] - 5:
+                    continue
+                # Stop at next dropdown
+                if y > next_dd_y - 15:
+                    break
+                # Skip text inside dropdown box
+                if rect["x0"] < x < rect["x1"] and rect["y0"] < y < rect["y1"]:
+                    continue
+
+                # Look for opening paren to start options
+                if not in_options:
+                    if "(" in text:
+                        in_options = True
+                        idx = text.index("(")
+                        after_paren = text[idx + 1:]
+                        paren_depth = 1 + after_paren.count("(") - after_paren.count(")")
+                        if after_paren.strip():
+                            options_parts.append(after_paren)
+                        if paren_depth <= 0 and "))" in text:
+                            # Closing )) means end of this options list
+                            break
+                else:
+                    # Continue collecting until we see "))" or paren depth = 0
+                    paren_depth += text.count("(") - text.count(")")
+                    options_parts.append(text)
+                    # Check for end of options - "))" pattern indicates end
+                    if "))" in text or (paren_depth <= 0 and text.rstrip().endswith(")")):
+                        break
+
+            # Parse options from collected text
+            if options_parts:
+                full_text = " ".join(options_parts)
+                # Remove trailing )) och, ) och, )), ) etc.
+                full_text = re.sub(r"\)+\s*(och\s*)?$", "", full_text)
+                # Split by comma (but not commas inside parentheses)
+                # Simple approach: split by ", " followed by lowercase letter
+                raw_opts = re.split(r",\s+(?=[a-zåäö])", full_text)
+                # Clean up options - remove empty, very short, or duplicates
+                seen = set()
+                for opt in raw_opts:
+                    opt = opt.strip()
+                    # Remove trailing ) if unbalanced
+                    while opt.count(")") > opt.count("(") and opt.endswith(")"):
+                        opt = opt[:-1].strip()
+                    if opt and len(opt) > 2 and opt not in seen:
+                        seen.add(opt)
+                        options.append(opt)
+
+            if selected:
+                choices[choice_key] = DropdownChoice(answer=selected, options=options)
+
+        if not choices:
+            return False
+
+        # Build question text with ${choicesN} placeholders
+        # Structure: main question + "label ${choices1} och ${choices2}\n\nlabel2 ${choices3}..."
+        first_dd = dropdowns[0]
+
+        # Collect main question text (before first dropdown)
+        main_question_parts = []
+        for span in spans:
+            sb = span["bbox"]
+            y = sb[1]
+            if question_start_y < y < first_dd["rect"]["y0"] - 5:
+                text = span["text"].strip()
+                # Skip category markers like "IH 1"
+                if not re.match(r"^[A-Z]{2,3}\s*\d*$", text):
+                    main_question_parts.append(span["text"])
+
+        main_question = " ".join(main_question_parts).strip()
+        main_question = re.sub(r"\s+", " ", main_question)
+
+        # Group dropdowns by vertical sections (similar y = same line)
+        sections = []  # List of lists of (dropdown_idx, label)
+        current_section = []
+        prev_y = None
+
+        for i, dd in enumerate(dropdowns):
+            rect = dd["rect"]
+            y = rect["y0"]
+
+            # Find label text before this dropdown
+            label = ""
+            for span in spans:
+                sb = span["bbox"]
+                sy = sb[1]
+                sx = sb[0]
+                text = span["text"].strip()
+
+                # Label should be on same line as dropdown, to the left
+                if abs(sy - y) < 25 and sx < rect["x0"] - 5:
+                    # Skip if inside previous dropdown
+                    is_inside_prev = False
+                    for j in range(i):
+                        pr = dropdowns[j]["rect"]
+                        if pr["x0"] < sx < pr["x1"] and pr["y0"] < sy < pr["y1"]:
+                            is_inside_prev = True
+                            break
+                    if not is_inside_prev and text and not text.startswith("("):
+                        label = text.strip()
+
+            # Check if this is same section as previous (within 80px vertically)
+            if prev_y is None or abs(y - prev_y) > 80:
+                # New section
+                if current_section:
+                    sections.append(current_section)
+                current_section = [(i, label)]
+            else:
+                # Same section
+                current_section.append((i, label))
+
+            prev_y = y
+
+        if current_section:
+            sections.append(current_section)
+
+        # Build DSL text from sections
+        dsl_lines = []
+        for section in sections:
+            line_parts = []
+            for idx, (dd_idx, label) in enumerate(section):
+                choice_key = f"choices{dd_idx + 1}"
+                part = f"${{{choice_key}}}"
+                if label:
+                    part = f"{label} {part}"
+                line_parts.append(part)
+
+            # Join with " och " for multiple dropdowns in same section
+            dsl_lines.append(" och ".join(line_parts))
+
+        final_dsl = "\n\n".join(dsl_lines)
+
+        question.text = main_question + "\n\n" + final_dsl if main_question else final_dsl
+        question.choices = choices
+        question.expected_answers = len(choices)
+        question.answer = ""  # Clear answer since we have choices
+
+        return True
+
     def _get_sorted_blocks(self, page: Any) -> list[dict]:
         """Get text blocks sorted by position with correctness metadata."""
         text_dict = page.get_text("dict")
@@ -646,6 +914,13 @@ class DISAParser:
         """Finalize a question by extracting answer from text."""
         answer_parts = answer_parts or []
         blue_regions = blue_regions or []
+
+        # Special handling for Textalternativ (dropdown) questions
+        if question.question_type == "Textalternativ" and question.page_num >= 0:
+            page = self.doc[question.page_num]
+            if self._parse_dropdown_question(question, page):
+                # Successfully parsed dropdowns, done
+                return
 
         full_text = "\n".join(text_parts)
         answer_markers = [
@@ -851,49 +1126,50 @@ class DISAParser:
         text = re.sub(r"\s*Hjälp\s*", "", text)
         return text.strip()
 
-    def _extract_expected_answers(self, text: str) -> int:
+    def _extract_expected_answers(self, text: str) -> int | str:
         """Extract expected answer count from question text.
 
         Detects patterns like:
         - "Välj två", "Markera tre", "Ange 2 svar"
         - "Vilka två av...", "Vilka tre påståenden..."
-        - "Vilka påståenden" (plural implies multiple, defaults to 2)
         - "två korrekta", "3 alternativ"
-        - "Välj ett eller flera" (multiple allowed, count varies)
+        - "Vilka påståenden" (at least 2)
+        - "Välj ett eller flera" (at least 1)
 
         Returns:
-            Number of expected answers:
             - 1 = single answer (default)
             - 2, 3, etc. = exactly N answers
-            - 0 = multiple allowed, count varies (1 to all)
+            - "2+" = at least 2 answers
+            - "1+" = at least 1 answer
         """
-        # Check for "one or more" pattern first
-        if MULTIPLE_ANSWERS_PATTERN.search(text):
-            return 0  # Multiple allowed, count varies
-
+        # Check for specific number patterns first (e.g., "Vilka två")
         match = EXPECTED_ANSWERS_PATTERN.search(text)
-        if not match:
-            return 1
+        if match:
+            # Find first non-None group (pattern has multiple capture groups)
+            num_str = None
+            for group in match.groups():
+                if group:
+                    num_str = group
+                    break
 
-        # Find first non-None group (pattern has multiple capture groups)
-        num_str = None
-        for group in match.groups():
-            if group:
-                num_str = group
-                break
+            if num_str:
+                num_str = num_str.lower()
 
-        if not num_str:
-            return 1
+                # "vilka påståenden" (plural) implies at least 2
+                if num_str == "påståenden":
+                    return "2+"
 
-        num_str = num_str.lower()
+                if num_str.isdigit():
+                    return int(num_str)
+                result = SWEDISH_NUMBERS.get(num_str)
+                if result:
+                    return result
 
-        # "vilka påståenden" (plural) implies multiple - default to 2
-        if num_str == "påståenden":
-            return 2
+        # "Välj ett eller flera" = at least 1
+        if MULTIPLE_ANSWERS_PATTERN.search(text):
+            return "1+"
 
-        if num_str.isdigit():
-            return int(num_str)
-        return SWEDISH_NUMBERS.get(num_str, 1)
+        return 1
 
 
 def parse_exam(pdf_path: Path | str, course: str) -> ParsedExam | None:

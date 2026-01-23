@@ -5,7 +5,6 @@ questions:
   pts: 2.0
   text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
     kommer underinandningen
-  expected_answers: 0
   opts:
   - text: det intrapleurala undertrycket ändras normalt
   - text: både de intrapleurala och intra-alveolära undertrycken ändras mer än normalt
@@ -96,7 +95,7 @@ questions:
   pts: 1.0
   text: Vilka två av följande använder sig centrala nervsystemet sig av för att reglerakontraktionsstyrkan
     i skelettmuskler?
-  expected_answers: 0
+  expected_answers: 2
   opts:
   - text: Rekrytering
     correct: true

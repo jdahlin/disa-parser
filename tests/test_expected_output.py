@@ -17,8 +17,9 @@ FIXTURE_DIR = Path(__file__).parent / "fixtures" / "questions"
 def get_fixture_pairs():
     """Get all JSON/YAML fixture pairs."""
     pairs = []
-    for json_file in FIXTURE_DIR.glob("*.json"):
-        yaml_file = json_file.with_suffix(".expected.yaml")
+    for json_file in FIXTURE_DIR.glob("*.json.gz"):
+        # Remove .json.gz suffix and add .expected.yaml
+        yaml_file = json_file.with_suffix("").with_suffix(".expected.yaml")
         if yaml_file.exists():
             pairs.append((json_file, yaml_file))
     return pairs
@@ -50,7 +51,12 @@ def parse_fixture_to_dict(json_path: Path) -> dict:
                 {"text": o.text, "correct": True} if o.is_correct else {"text": o.text}
                 for o in q.options
             ]
-        if q.answer:
+        if q.choices:
+            qdata["choices"] = {
+                k: {"answer": v.answer, "options": v.options}
+                for k, v in q.choices.items()
+            }
+        elif q.answer:
             qdata["answer"] = q.answer
         questions.append(qdata)
 
@@ -77,10 +83,11 @@ def test_parser_output_matches_expected(json_path: Path, yaml_path: Path):
 
 def test_all_fixtures_have_expected_yaml():
     """Ensure every JSON fixture has a corresponding expected YAML file."""
-    json_files = list(FIXTURE_DIR.glob("*.json"))
+    json_files = list(FIXTURE_DIR.glob("*.json.gz"))
     missing = []
     for json_file in json_files:
-        yaml_file = json_file.with_suffix(".expected.yaml")
+        # Remove .json.gz suffix and add .expected.yaml
+        yaml_file = json_file.with_suffix("").with_suffix(".expected.yaml")
         if not yaml_file.exists():
             missing.append(json_file.name)
 

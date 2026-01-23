@@ -61,7 +61,7 @@ questions:
   expected_answers: 3
   opts:
   - text: Glukos 6-fosfat går in och bildar NADPH, ribulos 5-fosfat och Cyp 450mm.
-  answer: Max 20 ord.  Skriv in ditt svar här
+  answer: Max 20 ord. Skriv in ditt svar här
 - num: 33
   type: ess
   type_full: Essä
@@ -100,6 +100,6 @@ questions:
     brandsläckare för bränder av klass A -C. A) Vad avses med bränder klass A, B och
     C? B) Förklara vilken klass av brand som har uppstått.
   opts:
-  - text: A= brand i textilier/trä B=brand i vätskor/alkoholer C=brand i gaser  Det
+  - text: A= brand i textilier/trä B=brand i vätskor/alkoholer C=brand i gaser Det
       är en typ B brand som uppstått då etanol är en alkohol.
-  answer: Max 80 ord.  Skriv in ditt svar här
+  answer: Max 80 ord. Skriv in ditt svar här

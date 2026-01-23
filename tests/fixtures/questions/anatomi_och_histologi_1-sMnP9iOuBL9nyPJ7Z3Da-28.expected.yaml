@@ -69,12 +69,12 @@ questions:
   opts:
   - text: I stratum basale
   answer: 'Melanocyter: producerar melanin, ett hudpigment som skyddar keratinocyternas
-    cellkärnor mot uv-strålning.  Langerhanska celler: En typ av makrofager som fagocyterar
-    oönskade ämnen/celler.  Sensoriska neuron: fria sensoriska nervcellsändar finns
+    cellkärnor mot uv-strålning. Langerhanska celler: En typ av makrofager som fagocyterar
+    oönskade ämnen/celler. Sensoriska neuron: fria sensoriska nervcellsändar finns
     i epidermis, däremot finns inte cellkroppen här. Fuktionen är att skicka sensoriska
     signaler till CNS.
 
-    b) I vilket lager i epidermis sker merparten av celldelningar?   (0.5p)'
+    b) I vilket lager i epidermis sker merparten av celldelningar? (0.5p)'
 - num: 29
   type: mc1
   type_full: Flervalsfråga
@@ -90,4 +90,4 @@ questions:
       axon går till CNS
   - text: bipolära neuron som registrerar doftmolekyler och som aktiverar sekundära
       neuron vars axon går till CNS
-  answer: 'Epitelet består dels av..  Välj ett alternativ:'
+  answer: 'Epitelet består dels av.. Välj ett alternativ:'

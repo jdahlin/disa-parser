@@ -61,7 +61,7 @@ questions:
   expected_answers: 3
   opts:
   - text: Glukos 6-fosfat går in och bildar NADPH, ribulos 5-fosfat och Cyp 450mm.
-  answer: Max 20 ord.  Skriv in ditt svar här
+  answer: Max 20 ord. Skriv in ditt svar här
 - num: 33
   type: ess
   type_full: Essä

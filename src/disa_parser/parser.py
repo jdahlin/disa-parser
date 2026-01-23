@@ -784,6 +784,8 @@ class DISAParser:
                 has_correct = True
 
             if block_text.strip():
+                # Normalize whitespace to single spaces
+                block_text = re.sub(r"\s+", " ", block_text).strip()
                 blocks.append(
                     {
                         "text": block_text,

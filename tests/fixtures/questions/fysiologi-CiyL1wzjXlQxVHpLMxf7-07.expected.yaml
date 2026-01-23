@@ -4,7 +4,7 @@ questions:
   type_full: Flersvarsfråga
   pts: 2.0
   text: När man andas in en given mängd luft mot ett högre luftvägsmotstånd än normalt
-    kommer underinandningen
+    kommer under inandningen
   expected_answers: 2
   opts:
   - text: det intrapleurala undertrycket ändras normalt
@@ -22,7 +22,7 @@ questions:
     en låg vitalkapacitet. Vad är den mest sannolika förklaringen till detta?
   opts:
   - text: Studenten har gjort tekniskt fel i samband med undersökningen och antingen
-      glömt användanäsklämman och/eller inte slutit tätt med läpparna runt munstycket
+      glömt använda näsklämman och/eller inte slutit tätt med läpparna runt munstycket
     correct: true
   - text: Studenten har ett lågt hemoglobinvärde vilket återspeglas i spirometriresultatet
   - text: Inget av övriga alternativ kan ge upphov till det uppmäta resultatet
@@ -34,17 +34,17 @@ questions:
   type_full: Sant/Falskt
   pts: 3.0
   text: a) I samband med en större blödning kommer både pO och saturation (med avseende
-    påsyrgas) vara oförändrade b) En patient med järnbristanemi kommer uppvisa en
-    oförändrad syrgaskoncentration mendäremot en sänkt syrgassaturation c) Vid utvecklad
-    lungfibros kommer såväl syrgassaturation som syrgaskoncentration varaminskade
+    på syrgas) vara oförändrade b) En patient med järnbristanemi kommer uppvisa en
+    oförändrad syrgaskoncentration men däremot en sänkt syrgassaturation c) Vid utvecklad
+    lungfibros kommer såväl syrgassaturation som syrgaskoncentration vara minskade
     jämfört med normalvärden d) En patient med emfysem efter mångårig cigarrökning
-    kommer ha kompenserat denreducerade diffusionskapaciteten med ökad saturation
-    och därmed ha nära nog normalsyrgaskoncentration i artärblod e) En skidåkare i
-    landslaget som precis lämnat höghöjdsträning och återkommit till Göteborgkommer
+    kommer ha kompenserat den reducerade diffusionskapaciteten med ökad saturation
+    och därmed ha nära nog normal syrgaskoncentration i artärblod e) En skidåkare
+    i landslaget som precis lämnat höghöjdsträning och återkommit till Göteborg kommer
     uppvisa en ökning i såväl saturation som i mängd fysikaliskt löst syrgas f) En
     medelålders patient på din mottagning undersöks med en pulsoximeter och uppvisar
-    ensaturation på 98%. Detta betyder att patienten har en reducerad lungkapacitet
-    på 2% och börföranleda fortsatta kontroller så att inte lungkapaciteten minskar
+    en saturation på 98%. Detta betyder att patienten har en reducerad lungkapacitet
+    på 2% och bör föranleda fortsatta kontroller så att inte lungkapaciteten minskar
     ytterligare.
   opts:
   - text: Falskt
@@ -70,7 +70,7 @@ questions:
   type_full: Flervalsfråga
   pts: 1.0
   text: I samband med simträning inför märkestagning (silvermagistern) ingår ett moment
-    medlängddykning. Vilken av nedanstående faktorer ökar under apnéperioden/dykmomentet?
+    med längddykning. Vilken av nedanstående faktorer ökar under apnéperioden/dykmomentet?
   opts:
   - text: pO2
   - text: pCO2
@@ -83,8 +83,8 @@ questions:
   type: mcn
   type_full: Flersvarsfråga
   pts: 2.0
-  text: 'Vilka två av de följande påståendena är korrekta när det gäller den glomerulärafiltrationshastigheten
-    (GFR)? Välj två alternativ:'
+  text: 'Vilka två av de följande påståendena är korrekta när det gäller den glomerulära
+    filtrationshastigheten (GFR)? Välj två alternativ:'
   expected_answers: 2
   opts:
   - text: Minskad salthalt vid macula densa leder till signalering som minskar GFR
@@ -99,7 +99,7 @@ questions:
   type_full: Flersvarsfråga
   pts: 2.0
   text: 'Vilka två av de följande alternativen är korrekta när det gäller henles slynga
-    ochmotströmsmekanismen? Välj två alternativ:'
+    och motströmsmekanismen? Välj två alternativ:'
   expected_answers: 2
   opts:
   - text: Aquaporinerna i henles nedåtgående slynga är ADH beroende

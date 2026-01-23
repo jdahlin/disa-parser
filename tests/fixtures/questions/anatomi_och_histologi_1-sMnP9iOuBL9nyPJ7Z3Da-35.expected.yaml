@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 34
@@ -80,18 +80,18 @@ questions:
   type_full: Flervalsfråga
   pts: 1.0
   text: anatomi 1 Medan du sitter och skriver den här tentan, kanske du äter något
-    för att bibehålla din energinivå.Det du äter skall passera igenom det långa rörsystem
-    som kallas gastrointestinalkanalen ochbearbetas på olika sätt innan resterna kommer
-    ut i toaletten. Födan du äter skall först passera genom mun och munhåla, därefter
-    vidare ner genommatstrupen – vilket påstående nedan stämmer?
+    för att bibehålla din energinivå. Det du äter skall passera igenom det långa rörsystem
+    som kallas gastrointestinalkanalen och bearbetas på olika sätt innan resterna
+    kommer ut i toaletten. Födan du äter skall först passera genom mun och munhåla,
+    därefter vidare ner genom matstrupen – vilket påstående nedan stämmer?
   cat: GI
   opts:
   - text: Esophagus hålls öppen genom kontinuerlig kontraktion av sitt cirkulära muskellager
   - text: För att smörja födan och inleda nedbrytning tillförs saliv från spottkörtlarna,
-      där den störstakallas glandula submandibularis.
+      där den största kallas glandula submandibularis.
   - text: Esophagus är placerad ventralt om trachea.
   - text: När vi sväljer hindras föda från att fara upp i nasopharynx genom att palatum
-      molle ochuvula höjs upp.
+      molle och uvula höjs upp.
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 36
@@ -99,7 +99,7 @@ questions:
   type_full: Essä
   pts: 2.0
   text: anatomi 2 Vilka organ nedom esophagus räknas till de gastrointestinala? Svara
-    på latin. (2p, per rättsvar.
+    på latin. (2p, per rätt svar.
   cat: GI
   answer: Ventriculus/Gaster, Hepar, Pancreas, Duodenum, Jejunum, Ileum, Colon och
     Rectum.
@@ -110,7 +110,7 @@ questions:
   text: histologi 1 Vilken del av magsäck är detta? Motivera ditt svar.
   cat: GI
   answer: I bilden syns övergången från flerskiktat oförhornat skivepitel till enkelt
-    cylinderepitel. Dettatalar för att det är övergången från esophagus till ventriculus,
-    alltså Cardia. Ringen är ritadrunt det område där cylinderepitelet tagit över
-    och där gandulae cardiae då finns i mucosan.Vi befinner oss alltså i cardia-delen
+    cylinderepitel. Detta talar för att det är övergången från esophagus till ventriculus,
+    alltså Cardia. Ringen är ritad runt det område där cylinderepitelet tagit över
+    och där gandulae cardiae då finns i mucosan. Vi befinner oss alltså i cardia-delen
     av magsäcken.

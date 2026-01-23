@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 16
@@ -77,13 +77,13 @@ questions:
   text: 'Svara kort på förjande frågor om nervvävnad: (0,5p per rätt svar, totalt)
     a) Vilken cell omsluter axonen i perifera nervsystemet? b) Vilken struktur utgör
     blod/nerv-barriären i en perifer nerv? c) Hur kan du skilja ett autonomt ganglion
-    från ett dorsalrotsganglion i ett ljusmikroskop? (angeett kännetecken) d) Hur
+    från ett dorsalrotsganglion i ett ljusmikroskop? (ange ett kännetecken) d) Hur
     ser ett multipolärt neuron ut?'
   cat: Nervvävnad
   opts:
   - text: Schwanncell
   - text: Perineurium
   - text: I dorsalrotsganglion kan utöver nervcellskroppar även axonbuntar ses till
-      skillnad från autonoma ganglion där axon är mycket svårare att hitta.
+      skillnad från  autonoma ganglion där axon är mycket svårare att hitta.
   - text: Det har en cellkropp med ett (längre) axon och flera (kortare) dendriter
-      som utgår från cellkroppen.
+      som utgår från  cellkroppen.

@@ -19,11 +19,11 @@ questions:
   type_full: Essä
   pts: 4.0
   text: På bilden visas en tripeptid. A) Ange vilken aminosyra som finns på C-terminalen,
-    vilken grupp aminosyror den tillhör och enegenskap den har.B) Ange vilken aminosyra
-    som finns på N-terminalen, vilken grupp aminosyror den tillhör och enegenskap
-    den har. (Max 25 ord.)
+    vilken grupp aminosyror den tillhör och en egenskap den har. B) Ange vilken aminosyra
+    som finns på N-terminalen, vilken grupp aminosyror den tillhör och en egenskap
+    den har.  (Max 25 ord.)
   answer: A) Cystein som tillhör sulfhydrylerna och den kan bilda kovalenta bindingar
-    (disulfidbryggor)B) Asparagin som tillhör amiderna och den är polär
+    (disulfidbryggor) B) Asparagin som tillhör amiderna och den är polär
 - num: 3
   type: mcn
   type_full: Flersvarsfråga
@@ -42,15 +42,15 @@ questions:
   type_full: Essä
   pts: 4.0
   text: How does the partial pressure of oxygen influence binding and release of oxygen
-    to/fromhemoglobin?  OBS! This question needs to be answered in English. (Max.
+    to/from hemoglobin?  OBS! This question needs to be answered in English. (Max.
     100 words).
   answer: When the pressure of oxygen is low the T-state of hemoglobin will be stabilized
-    sincehemoglobins affinity for oxygen is low, inducing realease of oxygen in the
-    tissue to increase theoxygen levels. However, if the oxygen pressure increases
-    the affinity for oxygen will increaseaccording to a sigmoidal curve, which is
-    due to an effect called co-operative binding, wherebinding of oxygen in one subunit
-    promotes the same thing in the next and so on. So whenoxygen pressure is low the
-    hemoglobin will release the oxygen it carries, while when it is highthe hemoglobin
+    since hemoglobins affinity for oxygen is low, inducing realease of oxygen in the
+    tissue to increase the oxygen levels. However, if the oxygen pressure increases
+    the affinity for oxygen will increase according to a sigmoidal curve, which is
+    due to an effect called co-operative binding, where binding of oxygen in one subunit
+    promotes the same thing in the next and so on. So when oxygen pressure is low
+    the hemoglobin will release the oxygen it carries, while when it is high the hemoglobin
     will bind oxygen.
 - num: 28
   type: mcn
@@ -74,33 +74,33 @@ questions:
   expected_answers: 2
   opts:
   - text: Glykogenin är ett enzym som krävs för att initiera bildningen av en helt
-      nyglykogenpartikel.
+      ny glykogenpartikel.
     correct: true
-  - text: Glykogen upplagrat i skelettmuskel kan användas för att upprätthållablodglukoskoncentrationen
+  - text: Glykogen upplagrat i skelettmuskel kan användas för att upprätthålla blodglukoskoncentrationen
       mellan måltider.
   - text: Stimuleras en skelettmuskelcell med hormonet glukagon induceras glykogenolys
       i cellen.
   - text: Skelettmuskel kan bara bryta ned glykogenet till glukos-6-fosfat eftersom
-      muskelcellernasaknar enzymet glukos-6-fosfatas.
+      muskelcellerna saknar enzymet glukos-6-fosfatas.
     correct: true
 - num: 30
   type: ess
   type_full: Essä
   pts: 2.0
   text: Allopurinol är en så kallad hypoxantinanalog som inhiberar nedbrytning av
-    purin-nukleotider tillurat. Vilket enzym hämmar denna läkemedelssubstans och vid
-    vilken sjukdom användsallopurinol som läkemedel?
+    purin-nukleotider till urat. Vilket enzym hämmar denna läkemedelssubstans och
+    vid vilken sjukdom används allopurinol som läkemedel?
   opts:
   - text: Xantinoxidas är enzymet och sjukdomen är gikt.
-  answer: (Max 20 ord.) Skriv in ditt svar här
+  answer: (Max 20 ord.)   Skriv in ditt svar här
 - num: 31
   type: ess
   type_full: Essä
   pts: 4.0
   text: Till vilka aminosyror kan nedanstående två alfa-ketosyror omvandlas i ett
-    steg viatransamineringsreaktioner? Ange även det fullständiga namnet på enzymet
-    som katalyserarbildningen av respektive aminosyra.A) pyruvatB) oxalacetat
+    steg via transamineringsreaktioner? Ange även det fullständiga namnet på enzymet
+    som katalyserar bildningen av respektive aminosyra. A) pyruvat B) oxalacetat
   opts:
-  - text: Alanin är aminosyran och alanin aminotransferas är enzymetB) Aspartat är
+  - text: Alanin är aminosyran och alanin aminotransferas är enzymet B) Aspartat är
       aminosyran och aspartat aminotransferas är enzymet.
-  answer: (Max 20 ord.) Skriv in ditt svar här
+  answer: (Max 20 ord.)   Skriv in ditt svar här

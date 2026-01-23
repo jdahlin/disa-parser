@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 7
@@ -64,8 +64,8 @@ questions:
   type_full: Essä
   pts: 1.0
   text: Denne så kallade vitruvianske man, tecknad av Leonardo Da Vinci (1452-1519)
-    står med sinvänstra fot utåtroterad så att tårna pekar åt sidan (lateralt). I
-    vilken led sker den utåtrotation somleder till att foten hamnar i detta läge,
+    står med sin vänstra fot utåtroterad så att tårna pekar åt sidan (lateralt). I
+    vilken led sker den utåtrotation som leder till att foten hamnar i detta läge,
     utgående från den anatomiska grundställningen?
   cat: Rörelseapparaten
   answer: Utåtrotationen sker i vänster höftled.
@@ -74,7 +74,7 @@ questions:
   type_full: Essä
   pts: 1.0
   text: Beskriv den högra bröstvårtans läge i förhållande till naveln. Använd korrekt
-    anatomisklägesterminologi.
+    anatomisk lägesterminologi.
   cat: Rörelseapparaten
   answer: Den högra bröstvårtan är kraniellt (superiort) och lateralt placerad i förhållande
     till naveln.

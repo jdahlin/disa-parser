@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 28
@@ -64,15 +64,15 @@ questions:
   type_full: Textområde
   pts: 2.0
   text: a) Keratinocyterna utgör merparten av cellerna i epidermis. Vilka andra tre
-    celltyper finns iepidermis? Ange namn och huvudfunktion.
+    celltyper finns i epidermis? Ange namn och huvudfunktion.
   cat: Hud
   opts:
   - text: I stratum basale
   answer: 'Melanocyter: producerar melanin, ett hudpigment som skyddar keratinocyternas
-    cellkärnor mot uv-strålning.  Langerhanska celler: En typ av makrofager som fagocyterar
-    oönskade ämnen/celler.  Sensoriska neuron: fria sensoriska nervcellsändar finns
-    i epidermis, däremot finns inte cellkroppen här. Fuktionen är att skicka sensoriska
-    signaler till CNS.
+    cellkärnor  mot uv-strålning.   Langerhanska celler: En typ av makrofager som
+    fagocyterar oönskade ämnen/celler.   Sensoriska neuron: fria sensoriska nervcellsändar
+    finns i epidermis, däremot finns inte  cellkroppen här. Fuktionen är att skicka
+    sensoriska signaler till CNS.
 
     b) I vilket lager i epidermis sker merparten av celldelningar?   (0.5p)'
 - num: 29
@@ -85,18 +85,18 @@ questions:
   - text: neuron med cilia som registrerar doftmolekyler och vars axon går till CNS
     correct: true
   - text: sensoriska celler som registrerar doftmolekyler och aktiverar neuron vars
-      axon går tillCNS
+      axon går till CNS
   - text: utskott från pseudounipolära celler som registrerar doftmolekyler och vars
-      axon går tillCNS
+      axon går till CNS
   - text: bipolära neuron som registrerar doftmolekyler och som aktiverar sekundära
-      neuron varsaxon går till CNS
-  answer: 'Epitelet består dels av.. Välj ett alternativ:'
+      neuron vars axon går till CNS
+  answer: 'Epitelet består dels av..   Välj ett alternativ:'
 - num: 30
   type: match
   type_full: Matchning
   pts: 1.0
   text: Vilken typ av epitel dominerar i de olika delarna av luftvägen? Markera rätt
-    typ av epitel för deolika delarna. (1p för alla rätt, inga delpoäng)
+    typ av epitel för de olika delarna. (1p för alla rätt, inga delpoäng)
   cat: Respiration
   opts:
   - text: Cilierad flerradigt
@@ -105,7 +105,7 @@ questions:
   - text: skiveptel
   - text: Orofarynx
     correct: true
-  - text: Cavum nasum(näshålan)
+  - text: Cavum nasum (näshålan)
     correct: true
   - text: trakea
     correct: true

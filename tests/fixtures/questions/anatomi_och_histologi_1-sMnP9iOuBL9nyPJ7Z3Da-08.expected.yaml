@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 7
@@ -64,8 +64,8 @@ questions:
   type_full: Essä
   pts: 1.0
   text: Denne så kallade vitruvianske man, tecknad av Leonardo Da Vinci (1452-1519)
-    står med sinvänstra fot utåtroterad så att tårna pekar åt sidan (lateralt). I
-    vilken led sker den utåtrotation somleder till att foten hamnar i detta läge,
+    står med sin vänstra fot utåtroterad så att tårna pekar åt sidan (lateralt). I
+    vilken led sker den utåtrotation som leder till att foten hamnar i detta läge,
     utgående från den anatomiska grundställningen?
   cat: Rörelseapparaten
   answer: Utåtrotationen sker i vänster höftled.
@@ -74,7 +74,7 @@ questions:
   type_full: Essä
   pts: 1.0
   text: Beskriv den högra bröstvårtans läge i förhållande till naveln. Använd korrekt
-    anatomisklägesterminologi.
+    anatomisk lägesterminologi.
   cat: Rörelseapparaten
   answer: Den högra bröstvårtan är kraniellt (superiort) och lateralt placerad i förhållande
     till naveln.
@@ -85,28 +85,28 @@ questions:
   text: Hjärta/cirkulation 1 Vilket påstående stämmer angående hjärtat?
   opts:
   - text: För att undvika blandning av syrerikt och syrefattigt blod är blodflödet
-      alltid enkelriktat ochseptum interatriale+interventriculare åtskiljer hjärthalvorna.
+      alltid enkelriktat och septum interatriale+interventriculare åtskiljer hjärthalvorna.
     correct: true
   - text: I atrium sinistrum töms allt blod från systemcirkulationen, via vena cava
-      superior ochinferior.
+      superior och inferior.
   - text: På väg till lungorna från ventriculus dexter passerar blodet en fickklaff
-      som kallas valvabicuspidalis.
+      som kallas valva bicuspidalis.
   - text: Det syrefattiga blodet förs till lungorna via två stora kärl som kallas
-      venae pulmonalesdexter och sinister
+      venae pulmonales dexter och sinister
   answer: 'Välj ett alternativ:'
 - num: 10
   type: ess
   type_full: Essä
   pts: 2.0
   text: Hjärta/cirkulation 2 Du är en röd blodkropp som från hjärtats atrium sinister
-    skall ta dig till ett glomerulus i en njure.Beskriv hur du tar dig dit genom att
-    namnge de olika strukturer och kärl (med egennamn ellerkärltyp) du passerar igenom
-    på vägen. Använd latinska benämningar. (2 p) Från atrium sinister passerar jag
-    först valva mitralis och kommer in i ventriculus sinister.Därifrån passerar jag
-    valva aorta och kommer in i aorta ascendens, arcus aorta och aortadescendens.
-    Alla dessa är delar av aorta thoracacia. Vid passage av m. diaphragmakommer jag
+    skall ta dig till ett glomerulus i en njure. Beskriv hur du tar dig dit genom
+    att namnge de olika strukturer och kärl (med egennamn eller kärltyp) du passerar
+    igenom på vägen. Använd latinska benämningar. (2 p) Från atrium sinister passerar
+    jag först valva mitralis och kommer in i ventriculus sinister. Därifrån passerar
+    jag valva aorta och kommer in i aorta ascendens, arcus aorta och aorta descendens.
+    Alla dessa är delar av aorta thoracacia. Vid passage av m. diaphragma kommer jag
     istället in i den del av aorta som kallas aorta abdominalis. För att ta mig till
-    njurensvänger jag av in i arteria renalis dx. eller sin. Nu passerar jag genom
-    hilus renalis och väljeren av artärerna som grenar ut sig i cortex. Här finns
-    många arterioler och jag svänger in i ensådan. Nu närmar jag mig ett glomerulus
-    via en afferent arteriol och kommer till sist in iglomerulus.
+    njuren svänger jag av in i arteria renalis dx. eller sin. Nu passerar jag genom
+    hilus renalis och väljer en av artärerna som grenar ut sig i cortex. Här finns
+    många arterioler och jag svänger in i en sådan. Nu närmar jag mig ett glomerulus
+    via en afferent arteriol och kommer till sist in i glomerulus.

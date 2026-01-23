@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 47
@@ -84,16 +84,16 @@ questions:
   type_full: Essä
   pts: 2.0
   text: Beskriv filtrationsbarriären i njurens glomeruli och namnge viktiga strukturella
-    komponenter. Ritagärna.
+    komponenter. Rita gärna.
   cat: Njure histologi
   answer: Ett fenestrerat endotel (rött) är den första delen av filtrationsbarriären.
-    Härigenom kan storaoch små molekyler passera, men celler hålls kvar i blodet.
-    Det glomerulära basalmembranet(GBM, grönt) är gemensamt för endotelet och pediklarna.
-    Det är negativt laddat och fungerardärför som en barriär mot negativt laddade
-    molekyler, t.ex. aminosyror. Det fungerar ocksådelvis som en mekanisk barriär
-    pga. de fibrer som finns i GBM. Podocyterna utgör Bowmanskapsels glomerulära epitel
-    och pediklarna (blått) fäster till GBM. Mellan pediklarna finnsfiltration slit
-    diaphragm, en dragkedjeliknande filtrationsbarriär som innehåller mycket avproteinet
-    nefrin. Detta är en mycket viktig del av barriären då den är det finaste filtret
-    somsom kan filtrera bort även små molekyler. Vätskan som kommer ut undertill i
-    bild ärprimärurin.
+    Härigenom kan stora och små molekyler passera, men celler hålls kvar i blodet.
+    Det glomerulära basalmembranet (GBM, grönt) är gemensamt för endotelet och pediklarna.
+    Det är negativt laddat och fungerar därför som en barriär mot negativt laddade
+    molekyler, t.ex. aminosyror. Det fungerar också delvis som en mekanisk barriär
+    pga. de fibrer som finns i GBM. Podocyterna utgör Bowmans kapsels glomerulära
+    epitel och pediklarna (blått) fäster till GBM. Mellan pediklarna finns filtration
+    slit diaphragm, en dragkedjeliknande filtrationsbarriär som innehåller mycket
+    av proteinet nefrin. Detta är en mycket viktig del av barriären då den är det
+    finaste filtret som som kan filtrera bort även små molekyler. Vätskan som kommer
+    ut undertill i bild är primärurin.

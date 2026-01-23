@@ -775,6 +775,8 @@ class DISAParser:
                     if color == 32768 and span_text.strip():  # Green text
                         has_correct = True
                         is_answer_font = True
+                # Add space between lines to prevent word merging
+                block_text += " "
 
             block_y = bbox[1]
             if any(abs(block_y - gy) < 20 for gy, _ in green_boxes):

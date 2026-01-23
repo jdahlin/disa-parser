@@ -36,7 +36,7 @@ questions:
   opts:
   - text: Rörelserna supination och pronation sker främst i handleden (art radiocarpea)
   - text: Handens skelett består av tarsus, ossa metatarsale samt proximala, intermediära
-      ochdistala falanger
+      och distala falanger
   - text: Tummen har tre falanger precis som övriga fingrar
   - text: De flesta av fingrarnas flexorer och extensorer urspringer på överarmsbenet
       (humerus)
@@ -50,13 +50,13 @@ questions:
   cat: Rörelseapparaten
   opts:
   - text: Ryggradens anteroposteriora kurvaturer kallas lordos i hals- och ländrygg
-      och kyfos ibröstrygg och bäcken
+      och kyfos i bröstrygg och bäcken
   - text: För att en aktiv rörelse skall kunna ske över en led krävs att agonisten
-      kontraherar ochantagonisten relaxerar.
+      kontraherar och antagonisten relaxerar.
   - text: För att en muskel skall kunna verka över en led krävs att den har sitt ursprung
-      och fäste påolika sidor om leden.
+      och fäste på olika sidor om leden.
   - text: När du lyfter benet för att sätta foten på nästa trappsteg i en trappa sker
-      normalt sett enflexion i höftleden och en extension i knäleden
+      normalt sett en flexion i höftleden och en extension i knäleden
     correct: true
   answer: 'Välj ett alternativ:'
 - num: 51
@@ -67,13 +67,13 @@ questions:
     ses i ett tvärsnitt av penis.
   cat: MUG
   answer: I ett tvärsnitt av penis ses i stort två svällkroppar, corpora cavernosa.
-    I dessa kanendotelceller ses eftersom svällkropparna är en del av blodcirkulationen
-    och är riktvaskulariserade. Därav kan man ibland se blodceller beroende på hur
-    väl ursköljt preparatetär. En tredje svällkropp, corpus spongiosum, omsluter urethra.
-    I urethra övergår urinblåsansövergångsepitel till ett flerskiktat oförhornat skivepitel
-    som då kan ses in mot lumen avurethra. Svällkropparna är omgivna av olika bindvävslager
-    och i bindväven kan manframförallt se fibroblaster. Runt penis finns histologiskt
-    tunn hud bestående av främstkeratinocyter.
+    I dessa kan endotelceller ses eftersom svällkropparna är en del av blodcirkulationen
+    och är rikt vaskulariserade. Därav kan man ibland se blodceller beroende på hur
+    väl ursköljt preparatet är. En tredje svällkropp, corpus spongiosum, omsluter
+    urethra. I urethra övergår urinblåsans övergångsepitel till ett flerskiktat oförhornat
+    skivepitel som då kan ses in mot lumen av urethra. Svällkropparna är omgivna av
+    olika bindvävslager och i bindväven kan man framförallt se fibroblaster. Runt
+    penis finns histologiskt tunn hud bestående av främst keratinocyter.
 - num: 52
   type: txt
   type_full: Textområde
@@ -84,11 +84,11 @@ questions:
   cat: KUG
   opts:
   - text: Mellan sen primärfollikel och sekundärfollikel. Ett antrum finns alltså
-      inte i en sen primärfollikel utan i senkundärfollikeln.
+      inte i en sen  primärfollikel utan i senkundärfollikeln.
   - text: Blodkärl och bindväv.
   - text: Runt oocyten och innanför corona radiata.
   - text: Granulosaceller => granulosaluteinceller och Techa interna-celler => techa
-      interna-lutein-celler.
+      interna-lutein- celler.
 - num: 53
   type: ess
   type_full: Essä
